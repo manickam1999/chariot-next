@@ -8,6 +8,7 @@ import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 import "leaflet-defaulticon-compatibility";
 import Navbar from "../navigation/Navbar";
+import RightNavbar from "../navigation/RightNavbar";
 
 interface MapProps {
   posix: LatLngExpression | LatLngTuple;
@@ -34,6 +35,7 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <Navbar />
+        <RightNavbar />
       </MapContainer>
     </div>
   );
