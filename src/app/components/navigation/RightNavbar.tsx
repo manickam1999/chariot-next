@@ -12,6 +12,7 @@ import React from "react";
 import { useMap } from "react-leaflet";
 import AboutUsDrawer from "../drawers/AboutUsDrawer/AboutUsDrawer";
 import DevelopersDrawer from "../drawers/DevelopersDrawer/DevelopersDrawer";
+import CheckpointDrawer from "../drawers/CheckpointDrawer/CheckpointDrawer";
 
 function RightNavbar() {
   const map = useMap();
@@ -35,9 +36,7 @@ function RightNavbar() {
           <button>
             <Route size={18} color="#271832" />
           </button>
-          <button>
-            <Flag size={18} color="#271832" />
-          </button>
+          <CheckpointDrawer />
         </div>
 
         <div className="flex flex-col px-3 py-4 m-4 space-y-8 rounded-full bg-primary-50">
