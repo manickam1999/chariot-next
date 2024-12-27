@@ -11,6 +11,7 @@ import {
 import React from "react";
 import { useMap } from "react-leaflet";
 import AboutUsDrawer from "../drawers/AboutUsDrawer/AboutUsDrawer";
+import DevelopersDrawer from "../drawers/DevelopersDrawer/DevelopersDrawer";
 
 function RightNavbar() {
   const map = useMap();
@@ -23,9 +24,7 @@ function RightNavbar() {
       <div className="flex flex-col">
         <div className="flex flex-col px-3 py-4 m-4 space-y-8 rounded-full bg-primary-50">
           <AboutUsDrawer />
-          <button>
-            <PersonStandingIcon size={18} color="#271832" />
-          </button>
+          <DevelopersDrawer />
         </div>
 
         <div className="flex flex-col px-3 py-4 m-4 space-y-8 rounded-full bg-primary-50">
