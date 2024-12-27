@@ -40,7 +40,7 @@ function CheckpointDrawer() {
         </button>
       </DrawerTrigger>
       <DrawerContent className="px-3 w-full">
-        <div className="py-5 gap-y-3 flex flex-col w-full overflow-y-scroll max-h-[50%]">
+        <div className="py-5 gap-y-3 flex flex-col w-full overflow-y-auto max-h-[50%]">
           <DrawerTitle className="py-3 flex justify-between">
             <span className="font-medium opacity-60">Checkpoints</span>
             <Badge>Year-Over-Year</Badge>

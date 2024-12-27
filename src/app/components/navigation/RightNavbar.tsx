@@ -13,6 +13,7 @@ import { useMap } from "react-leaflet";
 import AboutUsDrawer from "../drawers/AboutUsDrawer/AboutUsDrawer";
 import DevelopersDrawer from "../drawers/DevelopersDrawer/DevelopersDrawer";
 import CheckpointDrawer from "../drawers/CheckpointDrawer/CheckpointDrawer";
+import RoadblockDrawer from "../RoadblockDrawer/RoadblockDrawer";
 
 function RightNavbar() {
   const map = useMap();
@@ -29,9 +30,7 @@ function RightNavbar() {
         </div>
 
         <div className="flex flex-col px-3 py-4 m-4 space-y-8 rounded-full bg-primary-50">
-          <button>
-            <Construction size={18} color="#271832" />
-          </button>
+          <RoadblockDrawer />
           {/* TODO: implement logic after adding chariot in map. */}
           <button>
             <Route size={18} color="#271832" />
