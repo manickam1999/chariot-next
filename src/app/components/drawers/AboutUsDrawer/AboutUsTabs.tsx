@@ -13,7 +13,9 @@ function AboutUsTabs() {
         ))}
       </TabsList>
       {ABOUT_US.map((item) => (
-        <TabsContent value={item.title}>{item.content}</TabsContent>
+        <TabsContent key={item.title} value={item.title}>
+          {item.content}
+        </TabsContent>
       ))}
     </Tabs>
   );
