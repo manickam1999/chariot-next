@@ -7,8 +7,10 @@ import {
 import React from "react";
 import { Info } from "lucide-react";
 import AboutUsTabs from "./AboutUsTabs";
+import {useTranslations} from 'next-intl';
 
 function AboutUsDrawer() {
+  const t = useTranslations('AboutUs');
   return (
     <Drawer>
       <DrawerTrigger asChild>
@@ -18,7 +20,7 @@ function AboutUsDrawer() {
       </DrawerTrigger>
       <DrawerContent className="px-3 w-full">
         <div className="flex flex-col py-10">
-          <DrawerTitle className="text-center pb-5">About Us</DrawerTitle>
+          <DrawerTitle className="text-center pb-5">{t('drawer.title')}</DrawerTitle>
           <AboutUsTabs />
         </div>
       </DrawerContent>
