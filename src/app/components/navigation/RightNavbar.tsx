@@ -1,19 +1,10 @@
-import {
-  Info,
-  PersonStandingIcon,
-  Construction,
-  Route,
-  Flag,
-  Plus,
-  Minus,
-  Locate,
-} from "lucide-react";
+import { Route, Plus, Minus, Locate } from "lucide-react";
 import React from "react";
 import { useMap } from "react-leaflet";
 import AboutUsDrawer from "../drawers/AboutUsDrawer/AboutUsDrawer";
 import DevelopersDrawer from "../drawers/DevelopersDrawer/DevelopersDrawer";
 import CheckpointDrawer from "../drawers/CheckpointDrawer/CheckpointDrawer";
-import RoadblockDrawer from "../RoadblockDrawer/RoadblockDrawer";
+import RoadblockDrawer from "../drawers/RoadblockDrawer/RoadblockDrawer";
 
 function RightNavbar() {
   const map = useMap();
