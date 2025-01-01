@@ -4,22 +4,24 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import React, { useState } from "react";
+import React from "react";
 import Selectables from "../shared/Selectables";
-import { SelectableItem } from "@/app/constants/types";
+import { TSelectableItem, TTrackerType } from "@/app/constants/types";
 import { ChevronDown, OrigamiIcon, TractorIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useAtom } from "jotai";
+import { vehicleAtom } from "@/app/atoms/vehicle";
 
 function TrackerTypeDrawer() {
-  const [tracker, setTracker] = useState<"chariot" | "kavadi">("chariot");
+  const [tracker, setTracker] = useAtom(vehicleAtom);
 
   const onItemChange = (data: string) => {
-    setTracker(data as "chariot" | "kavadi");
+    setTracker(data as TTrackerType);
 
     /* TODO: manage tracker logic */
   };
 
-  const selectableItems: SelectableItem[] = [
+  const selectableItems: TSelectableItem[] = [
     {
       title: "chariot",
       description:

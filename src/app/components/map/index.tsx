@@ -9,6 +9,7 @@ import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility
 import "leaflet-defaulticon-compatibility";
 import Navbar from "../navigation/Navbar";
 import RightNavbar from "../navigation/RightNavbar";
+import SummaryWindow from "../SummaryWindow";
 
 interface MapProps {
   posix: LatLngExpression | LatLngTuple;
@@ -22,6 +23,7 @@ const defaults = {
 const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
   return (
     <div>
+      <SummaryWindow />
       <MapContainer
         center={posix}
         zoom={zoom}
@@ -33,6 +35,7 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          className="z-0"
         />
         <Navbar />
         <RightNavbar />

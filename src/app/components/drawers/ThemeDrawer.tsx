@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/drawer";
 import React from "react";
 import Selectables from "../shared/Selectables";
-import { SelectableItem } from "@/app/constants/types";
+import { TSelectableItem } from "@/app/constants/types";
 import { ChevronDown, ComputerIcon, MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button";
 function ThemeDrawer() {
   const { theme, setTheme } = useTheme();
 
-  const selectableItems: SelectableItem[] = [
+  const selectableItems: TSelectableItem[] = [
     {
       title: "dark",
       description: "For those who believe night is prime productivity time.",

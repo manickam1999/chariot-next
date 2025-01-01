@@ -1,4 +1,4 @@
-import { SelectableItem } from "@/app/constants/types";
+import { TSelectableItem } from "@/app/constants/types";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import React from "react";
 
@@ -8,7 +8,7 @@ function Selectables({
   onItemChange,
 }: {
   currentValue: string;
-  items: SelectableItem[];
+  items: TSelectableItem[];
   onItemChange: (value: string) => void;
 }) {
   return (
