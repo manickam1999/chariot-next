@@ -15,22 +15,61 @@ import { useAtom } from "jotai";
 function RoadblockDrawer() {
     const [isDisplayedOnMap, setIsDisplayedOnMap] = useAtom(roadBlockAtom);
 
-    /* TODO: change to actual checkpoints once endpoint is ready. */
-    const mockTraffic = [
+    const roads = [
         {
-            streetName: "Lebuh Penang",
-            duration: "11/02/2025, 08:00 - 14/02/2025, 21:00",
-            traffic: "high",
+            streetName: "Jalan Kebun Bunga / Lorong Air Terjun",
+            duration: "10/02/2025 - 12/02/2025",
+            type: "closure",
         },
         {
-            streetName: "Lebuh Somewhere",
-            duration: "11/02/2025, 08:00 - 14/02/2025, 21:00",
-            traffic: "high",
+            streetName: "Lorong Air Terjun / Jalan Gottlieb",
+            duration: "10/02/2025 - 12/02/2025",
+            type: "closure",
         },
         {
-            streetName: "Manickam house",
-            duration: "11/02/2025, 08:00 - 14/02/2025, 21:00",
-            traffic: "medium",
+            streetName: "Jalan Utama / Jalan Macalister",
+            duration: "10/02/2025 - 12/02/2025",
+            type: "closure",
+        },
+        {
+            streetName: "Jalan Gotlieb / Jalan Burma",
+            duration: "10/02/2025 - 12/02/2025",
+            type: "control",
+        },
+        {
+            streetName: "Jalan Brown / Jalan Tunku Abdul Rahman",
+            duration: "10/02/2025 - 12/02/2025",
+            type: "control",
+        },
+        {
+            streetName: "Lorong Air Terjun",
+            duration: "10/02/2025 - 12/02/2025",
+            type: "control",
+        },
+        {
+            streetName: "Jalan D.S Ramanathan / Jalan Gottlieb",
+            duration: "10/02/2025 - 12/02/2025",
+            type: "control",
+        },
+        {
+            streetName: "Jalan D.S Ramanathan / Jalan Brown",
+            duration: "10/02/2025 - 12/02/2025",
+            type: "control",
+        },
+        {
+            streetName: "Jalan Tunku Abdul Rahman / Jalan Brown",
+            duration: "10/02/2025 - 12/02/2025",
+            type: "control",
+        },
+        {
+            streetName: "Jalan Cantonment / Jalan Tunku Abdul Rahman",
+            duration: "10/02/2025 - 12/02/2025",
+            type: "control",
+        },
+        {
+            streetName: "Jalan Utama / Jalan Nunn",
+            duration: "10/02/2025 - 12/02/2025",
+            type: "control",
         },
     ];
 
@@ -47,7 +86,7 @@ function RoadblockDrawer() {
             <DrawerContent className="px-3 w-full">
                 <div className="py-5 gap-y-3 flex flex-col w-full overflow-y-auto max-h-[50%]">
                     <DrawerTitle className="py-3 flex justify-between items-center">
-                        <span className="font-medium opacity-60">
+                        <span className="font-control opacity-60">
                             Roadblocks
                         </span>
                         <div className="flex items-center space-x-2">
@@ -64,7 +103,7 @@ function RoadblockDrawer() {
                   data-[state=unchecked]:dark:bg-dark_inversed-800
                 "
                             />
-                            <label className="text-sm font-medium">
+                            <label className="text-sm font-control">
                                 {isDisplayedOnMap
                                     ? "Hide on Map"
                                     : "Show on Map"}
@@ -73,14 +112,12 @@ function RoadblockDrawer() {
                     </DrawerTitle>
                     <Divider />
                     <div className="flex flex-col gap-y-4">
-                        {mockTraffic.map((traffic) => (
+                        {roads.map((type) => (
                             <Roadblock
-                                key={traffic.streetName}
-                                streetName={traffic.streetName}
-                                traffic={
-                                    traffic.traffic as "high" | "medium" | "low"
-                                }
-                                duration={traffic.duration}
+                                key={type.streetName}
+                                streetName={type.streetName}
+                                type={type.type as "closure" | "control"}
+                                duration={type.duration}
                             />
                         ))}
                     </div>

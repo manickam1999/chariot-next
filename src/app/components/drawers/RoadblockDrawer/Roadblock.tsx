@@ -5,16 +5,15 @@ import React from "react";
 function Roadblock({
     streetName,
     duration,
-    traffic,
+    type,
 }: {
     streetName: string;
     duration: string;
-    traffic: "high" | "low" | "medium";
+    type: "closure" | "control";
 }) {
     const badgeVariant = {
-        high: "destructive",
-        medium: "secondary",
-        low: "constructive",
+        closure: "destructive",
+        control: "constructive",
     };
     return (
         <div className="flex flex-col gap-y-2 bg-primary-100 text-primary-850 rounded-lg px-4 py-5 w-full text-center">
@@ -26,13 +25,10 @@ function Roadblock({
                 <Badge
                     className="capitalize"
                     variant={
-                        badgeVariant[traffic] as
-                            | "constructive"
-                            | "secondary"
-                            | "destructive"
+                        badgeVariant[type] as "constructive" | "destructive"
                     }
                 >
-                    {traffic} Traffic
+                    {type}
                 </Badge>
             </div>
             <div className="flex justify-start items-center text-sm gap-x-3 pl-1">
