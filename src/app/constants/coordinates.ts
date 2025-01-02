@@ -138,6 +138,654 @@ export const DEPARTURE_COORDINATES = [
   [5.43238, 100.29833],
 ];
 
+export const VERBOSE_DEPARTURE_COORDINATES = [
+  {
+    lat: 5.41613,
+    lon: 100.33944,
+    roadName: "Lebuh Penang",
+  },
+  {
+    lat: 5.41579,
+    lon: 100.33917,
+    roadName: "Lebuh Chulia",
+  },
+  {
+    lat: 5.41541,
+    lon: 100.33958,
+    roadName: "Lebuh Pantai",
+  },
+  {
+    lat: 5.41532,
+    lon: 100.33967,
+    roadName: "Gat Lebuh Chulia",
+  },
+  {
+    lat: 5.4147,
+    lon: 100.34011,
+    roadName: "Gat Lebuh Chulia",
+  },
+  {
+    lat: 5.41453,
+    lon: 100.34022,
+    roadName: "Lebuh Victoria",
+  },
+  {
+    lat: 5.4145,
+    lon: 100.34018,
+    roadName: "Lebuh Victoria",
+  },
+  {
+    lat: 5.41442,
+    lon: 100.34008,
+    roadName: "Lebuh Victoria",
+  },
+  {
+    lat: 5.41395,
+    lon: 100.33939,
+    roadName: "Lebuh Victoria",
+  },
+  {
+    lat: 5.41347,
+    lon: 100.33871,
+    roadName: "Lebuh Victoria",
+  },
+  {
+    lat: 5.41331,
+    lon: 100.33843,
+    roadName: "Lebuh Victoria",
+  },
+  {
+    lat: 5.41277,
+    lon: 100.33779,
+    roadName: "Lebuh Victoria",
+  },
+  {
+    lat: 5.41227,
+    lon: 100.33702,
+    roadName: "Lebuh Victoria",
+  },
+  {
+    lat: 5.41203,
+    lon: 100.33661,
+    roadName: "Lebuh Victoria",
+  },
+  {
+    lat: 5.41179,
+    lon: 100.33614,
+    roadName: "Lebuh Victoria",
+  },
+  {
+    lat: 5.41163,
+    lon: 100.33586,
+    roadName: "Lebuh Victoria",
+  },
+  {
+    lat: 5.41157,
+    lon: 100.33563,
+    roadName: "Lebuh Victoria",
+  },
+  {
+    lat: 5.41143,
+    lon: 100.33515,
+    roadName: "Lebuh Victoria",
+  },
+  {
+    lat: 5.4114,
+    lon: 100.33493,
+    roadName: "Lebuh Victoria",
+  },
+  {
+    lat: 5.41135,
+    lon: 100.33475,
+    roadName: "Lebuh Victoria",
+  },
+  {
+    lat: 5.41122,
+    lon: 100.33454,
+    roadName: "Gat Jalan Prangin",
+  },
+  {
+    lat: 5.412,
+    lon: 100.33407,
+    roadName: "Jalan Doktor Lim Chwee Leong",
+  },
+  {
+    lat: 5.41191,
+    lon: 100.33392,
+    roadName: "Jalan C.Y. Choy",
+  },
+  {
+    lat: 5.41183,
+    lon: 100.33379,
+    roadName: "Jalan C.Y. Choy",
+  },
+  {
+    lat: 5.4117,
+    lon: 100.33358,
+    roadName: "Jalan C.Y. Choy",
+  },
+  {
+    lat: 5.41202,
+    lon: 100.33291,
+    roadName: "Jalan Magazine",
+  },
+  {
+    lat: 5.41208,
+    lon: 100.3328,
+    roadName: "Lebuh Carnarvon",
+  },
+  {
+    lat: 5.41234,
+    lon: 100.33216,
+    roadName: "Jalan Magazine",
+  },
+  {
+    lat: 5.41254,
+    lon: 100.33174,
+    roadName: "Jalan Magazine",
+  },
+  {
+    lat: 5.4128,
+    lon: 100.33124,
+    roadName: "Jalan Magazine",
+  },
+  {
+    lat: 5.4131,
+    lon: 100.33071,
+    roadName: "Jalan Magazine",
+  },
+  {
+    lat: 5.41331,
+    lon: 100.33026,
+    roadName: "Jalan Magazine",
+  },
+  {
+    lat: 5.41364,
+    lon: 100.32963,
+    roadName: "Jalan Magazine",
+  },
+  {
+    lat: 5.41393,
+    lon: 100.32898,
+    roadName: "Jalan Magazine",
+  },
+  {
+    lat: 5.4141,
+    lon: 100.32853,
+    roadName: "Jalan Magazine",
+  },
+  {
+    lat: 5.41374,
+    lon: 100.32774,
+    roadName: "Jalan Dato Keramat",
+  },
+  {
+    lat: 5.4135,
+    lon: 100.32711,
+    roadName: "Jalan Dato Keramat",
+  },
+  {
+    lat: 5.41334,
+    lon: 100.32658,
+    roadName: "Jalan Dato Keramat",
+  },
+  {
+    lat: 5.4133,
+    lon: 100.32634,
+    roadName: "Jalan Dato Keramat",
+  },
+  {
+    lat: 5.41325,
+    lon: 100.32601,
+    roadName: "Jalan Dato Keramat",
+  },
+  {
+    lat: 5.41321,
+    lon: 100.3257,
+    roadName: "Lorong Baru",
+  },
+  {
+    lat: 5.41316,
+    lon: 100.32557,
+    roadName: "Jalan Dato Keramat",
+  },
+  {
+    lat: 5.41312,
+    lon: 100.32547,
+    roadName: "Jalan Dato Keramat",
+  },
+  {
+    lat: 5.41282,
+    lon: 100.32461,
+    roadName: "Jalan Dato Keramat",
+  },
+  {
+    lat: 5.41279,
+    lon: 100.32451,
+    roadName: "Jalan Perlis",
+  },
+  {
+    lat: 5.41268,
+    lon: 100.32431,
+    roadName: "Jalan Dato Keramat",
+  },
+  {
+    lat: 5.41261,
+    lon: 100.32419,
+    roadName: "Jalan Dato Keramat",
+  },
+  {
+    lat: 5.41249,
+    lon: 100.32402,
+    roadName: "Jalan Dato Keramat",
+  },
+  {
+    lat: 5.41219,
+    lon: 100.32368,
+    roadName: "Jalan Dato Keramat",
+  },
+  {
+    lat: 5.41212,
+    lon: 100.32358,
+    roadName: "Jalan Dato Keramat",
+  },
+  {
+    lat: 5.41207,
+    lon: 100.32343,
+    roadName: "Jalan Dato Keramat",
+  },
+  {
+    lat: 5.41203,
+    lon: 100.32316,
+    roadName: "Jalan Dato Keramat",
+  },
+  {
+    lat: 5.41206,
+    lon: 100.32282,
+    roadName: "Jalan Dato Keramat",
+  },
+  {
+    lat: 5.41214,
+    lon: 100.32256,
+    roadName: "Jalan Dato Keramat",
+  },
+  {
+    lat: 5.4122,
+    lon: 100.32211,
+    roadName: "Jalan Dato Keramat",
+  },
+  {
+    lat: 5.41223,
+    lon: 100.32183,
+    roadName: "Jalan Dato Keramat",
+  },
+  {
+    lat: 5.41236,
+    lon: 100.32109,
+    roadName: "Jalan Dato Keramat",
+  },
+  {
+    lat: 5.41245,
+    lon: 100.32069,
+    roadName: "Jalan Dato Keramat",
+  },
+  {
+    lat: 5.4125,
+    lon: 100.32028,
+    roadName: "Jalan Dato Keramat",
+  },
+  {
+    lat: 5.41275,
+    lon: 100.31922,
+    roadName: "Jalan Dato Keramat",
+  },
+  {
+    lat: 5.4128,
+    lon: 100.31892,
+    roadName: "Jalan Dato Keramat",
+  },
+  {
+    lat: 5.41281,
+    lon: 100.31867,
+    roadName: "Jalan Dato Keramat",
+  },
+  {
+    lat: 5.4128,
+    lon: 100.31744,
+    roadName: "Jalan Dato Keramat",
+  },
+  {
+    lat: 5.41282,
+    lon: 100.31674,
+    roadName: "Jalan Dato Keramat",
+  },
+  {
+    lat: 5.41285,
+    lon: 100.31621,
+    roadName: "Jalan Dato Keramat",
+  },
+  {
+    lat: 5.41287,
+    lon: 100.31603,
+    roadName: "Jalan Ayer Itam",
+  },
+  {
+    lat: 5.41292,
+    lon: 100.31584,
+    roadName: "Jalan Ayer Itam",
+  },
+  {
+    lat: 5.41293,
+    lon: 100.31577,
+    roadName: "Jalan Ayer Itam",
+  },
+  {
+    lat: 5.41304,
+    lon: 100.31542,
+    roadName: "Jalan Ayer Itam",
+  },
+  {
+    lat: 5.41325,
+    lon: 100.3149,
+    roadName: "Jalan Ayer Itam",
+  },
+  {
+    lat: 5.41336,
+    lon: 100.3145,
+    roadName: "Jalan Ayer Itam",
+  },
+  {
+    lat: 5.41347,
+    lon: 100.31411,
+    roadName: "Jalan Ayer Itam",
+  },
+  {
+    lat: 5.41351,
+    lon: 100.31352,
+    roadName: "Jalan Ayer Itam",
+  },
+  {
+    lat: 5.41355,
+    lon: 100.31291,
+    roadName: "Jalan Ayer Itam",
+  },
+  {
+    lat: 5.41427,
+    lon: 100.31189,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.41444,
+    lon: 100.31167,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.41491,
+    lon: 100.31108,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.41517,
+    lon: 100.31076,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.41586,
+    lon: 100.30952,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.41626,
+    lon: 100.30893,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.4165,
+    lon: 100.30846,
+    roadName: "Jalan Ross",
+  },
+  {
+    lat: 5.41659,
+    lon: 100.30828,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.41666,
+    lon: 100.30812,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.41743,
+    lon: 100.30696,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.41795,
+    lon: 100.30609,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.4181,
+    lon: 100.30589,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.41837,
+    lon: 100.3056,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.41873,
+    lon: 100.30527,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.4188,
+    lon: 100.30518,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.41882,
+    lon: 100.30509,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.4188,
+    lon: 100.30495,
+    roadName: "Jalan Scotland",
+  },
+  {
+    lat: 5.41922,
+    lon: 100.3054,
+    roadName: "Jalan Sepoy Lines",
+  },
+  {
+    lat: 5.41912,
+    lon: 100.30516,
+    roadName: "Jalan Sepoy Lines",
+  },
+  {
+    lat: 5.41913,
+    lon: 100.30505,
+    roadName: "Jalan Sepoy Lines",
+  },
+  {
+    lat: 5.41916,
+    lon: 100.30499,
+    roadName: "Jalan Sepoy Lines",
+  },
+  {
+    lat: 5.41924,
+    lon: 100.30491,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.41937,
+    lon: 100.30478,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.41993,
+    lon: 100.30441,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.42061,
+    lon: 100.30395,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.42115,
+    lon: 100.3036,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.42155,
+    lon: 100.30344,
+    roadName: "Jalan Macalister",
+  },
+  {
+    lat: 5.42175,
+    lon: 100.30337,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.42187,
+    lon: 100.30335,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.4226,
+    lon: 100.30333,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.42309,
+    lon: 100.30325,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.42324,
+    lon: 100.3032,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.42369,
+    lon: 100.30301,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.42474,
+    lon: 100.30239,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.4252,
+    lon: 100.3021,
+    roadName: "Taman Western",
+  },
+  {
+    lat: 5.42576,
+    lon: 100.30183,
+    roadName: "Persiaran Kuari",
+  },
+  {
+    lat: 5.42602,
+    lon: 100.30174,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.42645,
+    lon: 100.30157,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.42655,
+    lon: 100.30152,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.4269,
+    lon: 100.3014,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.42739,
+    lon: 100.3012,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.42759,
+    lon: 100.3011,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.42805,
+    lon: 100.3008,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.42903,
+    lon: 100.30011,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.42953,
+    lon: 100.29976,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.42981,
+    lon: 100.29962,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.43021,
+    lon: 100.29943,
+    roadName: "Jalan Utama",
+  },
+  {
+    lat: 5.43055,
+    lon: 100.29928,
+    roadName: "Jalan Gottlieb",
+  },
+  {
+    lat: 5.43099,
+    lon: 100.29906,
+    roadName: "Jalan Kebun Bunga",
+  },
+  {
+    lat: 5.43152,
+    lon: 100.29884,
+    roadName: "Jalan Kebun Bunga",
+  },
+  {
+    lat: 5.43161,
+    lon: 100.29881,
+    roadName: "Jalan Kebun Bunga",
+  },
+  {
+    lat: 5.43181,
+    lon: 100.29872,
+    roadName: "Jalan Kebun Bunga",
+  },
+  {
+    lat: 5.43221,
+    lon: 100.29847,
+    roadName: "Jalan Kebun Bunga",
+  },
+  {
+    lat: 5.43238,
+    lon: 100.29833,
+    roadName: "Jalan Kebun Bunga",
+  },
+  {
+    lat: 5.432815107402132,
+    lon: 100.29829799633161,
+    roadName: "Jalan Kebun Bunga",
+  },
+];
+
 export const MAP_COORDINATES: Coordinates = {
   // Little India
   center: [5.417743609227057, 100.31117161594379],
