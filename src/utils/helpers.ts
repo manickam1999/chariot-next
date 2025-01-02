@@ -2,9 +2,18 @@ import L from "leaflet";
 import { TTrackerType } from "../constants/types";
 
 export const generatePulsatingMarker = (trackerType: TTrackerType) => {
-  return L.divIcon({
-    className: `animate-pulseShadow block rounded-full cursor-pointer w-16 h-16 ${trackerType === "chariot" ? "bg-primary-100" : "bg-primary-400"}`,
-  });
+  const color = trackerType === "chariot" ? "#9D00FF" : "blue";
+  const cssStyle = `
+        width: 16px;
+        height: 16px;
+        background: ${color};
+        color: ${color};
+        box-shadow: 0 0 0 ${color};
+      `;
+      return L.divIcon({
+        html: `<span style="${cssStyle}" class="pulse"/>`,
+        className: "",
+    });
 };
 
 export const convertDateToReadableDate = (date: Date) => {
