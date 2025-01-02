@@ -21,6 +21,8 @@ import { vehicleAtom } from "@/atoms/vehicle";
 import { useAtom } from "jotai";
 import { useGetProgressInfo } from "@/hooks/useGetProgressInfo";
 import { generatePulsatingMarker } from "@/utils/helpers";
+import { roadBlockAtom } from "@/atoms/road-block";
+import Roadblock from "../road-block/Roadblock";
 
 interface MapProps {
     posix: LatLngExpression | LatLngTuple;
@@ -38,9 +40,10 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
         DEPARTURE_COORDINATES
     );
 
-    const [tracker] = useAtom(vehicleAtom);
-    const { data, vehiclePosition, lastUpdatedAt } =
-        useGetProgressInfo(tracker);
+  const [tracker] = useAtom(vehicleAtom);
+  const [roadBlock] = useAtom(roadBlockAtom);
+
+  const { data, vehiclePosition, lastUpdatedAt } = useGetProgressInfo(tracker);
 
     const fallback = {
         progress: 0,
@@ -70,23 +73,24 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
                     className="z-0 dark:hue-rotate-180 dark:invert dark:grayscale-[50%]"
                 />
 
-                <AntPath
-                    positions={polylineCoords}
-                    options={{
-                        delay: 800,
-                        hardwareAccelerated: true,
-                    }}
-                    pathOptions={{
-                        color: theme === "dark" ? "#342043" : "#B497CB",
-                        pulseColor: theme === "dark" ? "#B497CB" : "#684186",
-                    }}
-                />
-
-                {/* Start Pin  */}
-                <Marker
-                    position={MAP_COORDINATES.start}
-                    icon={markerIcon}
-                ></Marker>
+        <AntPath
+          positions={polylineCoords}
+          options={{
+            delay: 800,
+            hardwareAccelerated: true,
+          }}
+          pathOptions={{
+            color: theme === "dark" ? "#342043" : "#B497CB",
+            pulseColor: theme === "dark" ? "#B497CB" : "#684186",
+          }}
+        />
+        
+        {
+          roadBlock && <Roadblock></Roadblock>
+        }
+        
+        {/* Start Pin  */}
+        <Marker position={MAP_COORDINATES.start} icon={markerIcon}></Marker>
 
                 {/* End Pin */}
                 <Marker
