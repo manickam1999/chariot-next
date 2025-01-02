@@ -17,14 +17,23 @@ export const generatePulsatingMarker = (trackerType: TTrackerType) => {
 };
 
 export const convertDateToReadableDate = (date: Date) => {
-    const options: Intl.DateTimeFormatOptions = {
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-    };
-    return date.toLocaleString("en-US", options);
+    const now = new Date();
+    const diff = (now.getTime() - date.getTime()) / 1000; 
+
+    if (diff < 60) {
+        return `${Math.floor(diff)} seconds ago`;
+    } else if (diff < 3600) {
+        return `${Math.floor(diff / 60)} minutes ago`;
+    } else {
+        const options: Intl.DateTimeFormatOptions = {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+        };
+        return date.toLocaleString("en-US", options);
+    }
 };
