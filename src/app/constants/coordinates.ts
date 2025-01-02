@@ -1,3 +1,11 @@
+type Location = [number, number];
+
+interface Coordinates {
+  center: Location;
+  start: Location;
+  end: Location;
+}
+
 export const DEPARTURE_COORDINATES = [
   [5.41613, 100.33944],
   [5.41579, 100.33917],
@@ -129,3 +137,12 @@ export const DEPARTURE_COORDINATES = [
   [5.43221, 100.29847],
   [5.43238, 100.29833],
 ];
+
+export const MAP_COORDINATES: Coordinates = {
+  // Little India
+  center: [5.417743609227057, 100.31117161594379],
+  // Penang Street Temple
+  start: [5.416387132299111, 100.33936699633155],
+  // Waterfall Temple
+  end: [5.432815107402132, 100.29829799633161],
+};
