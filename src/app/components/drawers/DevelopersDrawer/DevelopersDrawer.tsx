@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/drawer";
 import React from "react";
 import { PersonStandingIcon } from "lucide-react";
-import { DEVELOPERS } from "@/app/constants/developers";
+import { DEVELOPERS } from "@/constants/developers";
 import Developer from "./Developer";
 
 function DevelopersDrawer() {

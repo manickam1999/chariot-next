@@ -1,4 +1,4 @@
-import { ABOUT_US } from "@/app/constants/about";
+import { ABOUT_US } from "@/constants/about";
 import { Tabs, TabsTrigger, TabsContent, TabsList } from "@/components/ui/tabs";
 import React from "react";
 

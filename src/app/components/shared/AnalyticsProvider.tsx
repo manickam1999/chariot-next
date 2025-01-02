@@ -1,6 +1,6 @@
 "use client";
 
-import { Analytics } from "@/app/utils/mixpanel";
+import { Analytics } from "@/utils/mixpanel";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 

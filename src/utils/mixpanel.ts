@@ -3,6 +3,15 @@ import mixpanel from "mixpanel-browser";
 
 const MIXPANEL_TOKEN = env.NEXT_PUBLIC_MIXPANEL_TOKEN;
 
+type PropertyValue = string | number | boolean | null | undefined;
+
+type TrackProperties = {
+  [key: string]:
+    | PropertyValue
+    | PropertyValue[]
+    | Record<string, PropertyValue>;
+};
+
 if (typeof window !== "undefined" && MIXPANEL_TOKEN) {
   mixpanel.init(MIXPANEL_TOKEN, {
     debug: process.env.NODE_ENV !== "production",
@@ -11,7 +20,7 @@ if (typeof window !== "undefined" && MIXPANEL_TOKEN) {
   });
 }
 
-const track = (eventName: string, properties?: Record<string, any>) => {
+const track = (eventName: string, properties?: TrackProperties) => {
   if (typeof window !== "undefined" && MIXPANEL_TOKEN) {
     mixpanel.track(eventName, properties);
   }
