@@ -65,7 +65,7 @@ export const useGetProgressInfo = (type: TTrackerType) => {
                 setLastUpdatedAt(new Date());
 
                 index = (index + 1) % VERBOSE_DEPARTURE_COORDINATES.length;
-            }, 200);
+            }, 1000);
 
             return () => clearInterval(interval);
         }
