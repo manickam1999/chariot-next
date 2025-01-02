@@ -10,6 +10,7 @@ import { TSelectableItem } from "@/app/constants/types";
 import { ChevronDown, ComputerIcon, MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
+import Divider from "../Divider";
 
 function ThemeDrawer() {
   const { theme, setTheme } = useTheme();
@@ -18,18 +19,36 @@ function ThemeDrawer() {
     {
       title: "dark",
       description: "For those who believe night is prime productivity time.",
-      logo: <MoonIcon strokeWidth={1} size={30} color={"#271832"} />,
+      logo: (
+        <MoonIcon
+          strokeWidth={1}
+          size={30}
+          className="stroke-primary-850 dark:stroke-dark_inversed-850"
+        />
+      ),
     },
     {
       title: "light",
       description: "For those who want to be blinded by the sun at midnight.",
-      logo: <SunIcon size={30} strokeWidth={1} color={"#271832"} />,
+      logo: (
+        <SunIcon
+          size={30}
+          strokeWidth={1}
+          className="stroke-primary-850 dark:stroke-dark_inversed-850"
+        />
+      ),
     },
     {
       title: "system",
       description:
         "For the indecisive ones who let their OS make life decisions.",
-      logo: <ComputerIcon size={30} strokeWidth={1} color={"#271832"} />,
+      logo: (
+        <ComputerIcon
+          size={30}
+          strokeWidth={1}
+          className="stroke-primary-850 dark:stroke-dark_inversed-850"
+        />
+      ),
     },
   ];
 
@@ -46,10 +65,10 @@ function ThemeDrawer() {
       </DrawerTrigger>
       <DrawerContent className="px-3 w-full">
         <div className="py-5 gap-y-3 flex flex-col w-full">
-          <DrawerTitle className="font-medium opacity-60 py-3">
+          <DrawerTitle className="font-medium opacity-60 dark:opacity-100 py-3">
             Choose Map Mode
           </DrawerTitle>
-          <hr color="271832" />
+          <Divider />
           <Selectables
             onItemChange={setTheme}
             items={selectableItems}

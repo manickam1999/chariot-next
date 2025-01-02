@@ -13,7 +13,10 @@ function AboutUsDrawer() {
     <Drawer>
       <DrawerTrigger asChild>
         <button>
-          <Info size={18} color="#271832" />
+          <Info
+            size={18}
+            className="stroke-primary-850 dark:stroke-dark_inversed-850"
+          />
         </button>
       </DrawerTrigger>
       <DrawerContent className="px-3 w-full">

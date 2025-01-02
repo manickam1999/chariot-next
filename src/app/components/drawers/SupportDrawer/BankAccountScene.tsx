@@ -2,6 +2,7 @@ import { CopyIcon } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import { toast } from "sonner";
+import Divider from "../../Divider";
 
 function BankAccountScene() {
   const bankAccountDetails = [
@@ -18,7 +19,7 @@ function BankAccountScene() {
   return (
     <div className="flex flex-col gap-y-4 items-center justify-center">
       <div className="flex flex-col items-center gap-y-2">
-        <span className="font-bold text-primary-850">
+        <span className="font-bold text-primary-850 dark:text-dark_inversed-850">
           Malaysian National QR
         </span>
         <Image
@@ -28,9 +29,9 @@ function BankAccountScene() {
           height={150}
         />
       </div>
-      <hr color="271832" />
+      <Divider />
       <div className="flex flex-col items-center gap-y-2 w-full">
-        <span className="font-bold text-primary-850">
+        <span className="font-bold text-primary-850 dark:text-dark_inversed-850">
           Bank Transfer Details
         </span>
         <div className="flex flex-col gap-y-3 rounded-lg bg-primary-100 p-3 w-full md:w-fit md:items-center">

@@ -22,10 +22,12 @@ function Selectables({
         <div className="flex items-center space-x-2" key={item.title}>
           <div>{item.logo}</div>
           <div className="flex flex-col px-2 md:px-0">
-            <span className="text-lg font-semibold text-primary-850 capitalize">
+            <span className="text-lg font-semibold text-primary-850 dark:text-dark_inversed-850 capitalize">
               {item.title}
             </span>
-            <span className="text-sm text-primary-800">{item.description}</span>
+            <span className="text-sm text-primary-800 dark:text-dark_inversed-800">
+              {item.description}
+            </span>
           </div>
           <RadioGroupItem value={item.title} id={item.title} />
         </div>

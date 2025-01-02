@@ -8,6 +8,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Flag } from "lucide-react";
 import Checkpoint from "./Checkpoint";
+import Divider from "../../Divider";
 
 function CheckpointDrawer() {
   /* TODO: change to actual checkpoints once endpoint is ready. */
@@ -36,16 +37,21 @@ function CheckpointDrawer() {
     <Drawer>
       <DrawerTrigger asChild>
         <button>
-          <Flag size={18} color="#271832" />
+          <Flag
+            size={18}
+            className="stroke-primary-850 dark:stroke-dark_inversed-850"
+          />
         </button>
       </DrawerTrigger>
       <DrawerContent className="px-3 w-full">
         <div className="py-5 gap-y-3 flex flex-col w-full overflow-y-auto max-h-[50%]">
           <DrawerTitle className="py-3 flex justify-between">
-            <span className="font-medium opacity-60">Checkpoints</span>
+            <span className="font-medium opacity-60 dark:opacity-100 text-primary-800 dark:text-dark_inversed-800">
+              Checkpoints
+            </span>
             <Badge>Year-Over-Year</Badge>
           </DrawerTitle>
-          <hr color="271832" />
+          <Divider />
           <div className="flex flex-col gap-y-4">
             {mockCheckpoints.map((checkpoint) => (
               <Checkpoint

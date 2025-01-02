@@ -15,30 +15,42 @@ function RightNavbar() {
   return (
     <div className="absolute z-[410] bottom-1/4 right-0 lg:bottom-10 mb-4 lg:mb-0 fade-in">
       <div className="flex flex-col">
-        <div className="flex flex-col px-3 py-4 m-4 space-y-8 rounded-full bg-primary-50">
+        <div className="flex flex-col px-3 py-4 m-4 space-y-8 rounded-full bg-primary-50 dark:bg-dark_inversed-100">
           <AboutUsDrawer />
           <DevelopersDrawer />
         </div>
 
-        <div className="flex flex-col px-3 py-4 m-4 space-y-8 rounded-full bg-primary-50">
+        <div className="flex flex-col px-3 py-4 m-4 space-y-8 rounded-full bg-primary-50 dark:bg-dark_inversed-100">
           <RoadblockDrawer />
           {/* TODO: implement logic after adding chariot in map. */}
           <button>
-            <Route size={18} color="#271832" />
+            <Route
+              size={18}
+              className="stroke-primary-850 dark:stroke-dark_inversed-850"
+            />
           </button>
           <CheckpointDrawer />
         </div>
 
-        <div className="flex flex-col px-3 py-4 m-4 space-y-8 rounded-full bg-primary-50">
+        <div className="flex flex-col px-3 py-4 m-4 space-y-8 rounded-full bg-primary-50 dark:bg-dark_inversed-100">
           <button onClick={handleZoomIn}>
-            <Plus size={18} color="#271832" />
+            <Plus
+              size={18}
+              className="stroke-primary-850 dark:stroke-dark_inversed-850"
+            />
           </button>
           <button onClick={handleZoomOut}>
-            <Minus size={18} color="#271832" />
+            <Minus
+              size={18}
+              className="stroke-primary-850 dark:stroke-dark_inversed-850"
+            />
           </button>
           {/* TODO: implement logic after adding chariot in map. */}
           <button>
-            <Locate size={18} color="#271832" />
+            <Locate
+              size={18}
+              className="stroke-primary-850 dark:stroke-dark_inversed-850"
+            />
           </button>
         </div>
       </div>
