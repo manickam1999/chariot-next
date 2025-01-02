@@ -14,7 +14,10 @@ function DevelopersDrawer() {
     <Drawer>
       <DrawerTrigger asChild>
         <button>
-          <PersonStandingIcon size={18} color="#271832" />
+          <PersonStandingIcon
+            size={18}
+            className="stroke-primary-850 dark:stroke-dark_inversed-850"
+          />
         </button>
       </DrawerTrigger>
       <DrawerContent className="px-3 w-full">

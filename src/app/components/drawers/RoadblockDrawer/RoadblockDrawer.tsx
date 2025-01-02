@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/drawer";
 import { Construction } from "lucide-react";
 import Roadblock from "./Roadblock";
+import Divider from "../../Divider";
 
 function RoadblockDrawer() {
   /* TODO: change to actual checkpoints once endpoint is ready. */
@@ -32,7 +33,10 @@ function RoadblockDrawer() {
     <Drawer>
       <DrawerTrigger asChild>
         <button>
-          <Construction size={18} color="#271832" />
+          <Construction
+            size={18}
+            className="stroke-primary-850 dark:stroke-dark_inversed-850"
+          />
         </button>
       </DrawerTrigger>
       <DrawerContent className="px-3 w-full">
@@ -40,7 +44,7 @@ function RoadblockDrawer() {
           <DrawerTitle className="py-3 flex justify-between">
             <span className="font-medium opacity-60">Roadblocks</span>
           </DrawerTitle>
-          <hr color="271832" />
+          <Divider />
           <div className="flex flex-col gap-y-4">
             {mockTraffic.map((traffic) => (
               <Roadblock

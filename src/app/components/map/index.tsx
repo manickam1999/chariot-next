@@ -35,7 +35,7 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          className="z-0"
+          className="z-0 dark:hue-rotate-180 dark:invert dark:grayscale-[50%]"
         />
         <Navbar />
         <RightNavbar />

@@ -12,7 +12,7 @@ function TNCScene({
 
   /* TODO: add full TNC*/
   return (
-    <div className="flex flex-col items-center w-full gap-y-3">
+    <div className="text-primary-850 dark:text-dark_inversed-850 flex flex-col items-center w-full gap-y-3">
       <div className="gap-y-2 rounded-md border border-[#CBD5E1] p-2 flex flex-col w-full h-40 overflow-y-auto">
         <span>Terms and Conditions</span>
         <span>
