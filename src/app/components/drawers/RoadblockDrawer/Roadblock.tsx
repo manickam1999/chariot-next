@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import { ArrowDown, ArrowUp, Clock, MapPin } from "lucide-react";
+import { Clock, MapPin } from "lucide-react";
 import React from "react";
 
 function Roadblock({

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import React from "react";
 import { Navigation2 } from "lucide-react";
-import { convertDateToReadableDate } from "../utils/helpers";
+import { convertDateToReadableDate } from "../../utils/helpers";
 
 function SummaryWindow({
   progress,

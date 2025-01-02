@@ -6,11 +6,11 @@ import {
 } from "@/components/ui/drawer";
 import React from "react";
 import Selectables from "../shared/Selectables";
-import { TSelectableItem, TTrackerType } from "@/app/constants/types";
+import { TSelectableItem, TTrackerType } from "@/constants/types";
 import { ChevronDown, OrigamiIcon, TractorIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAtom } from "jotai";
-import { vehicleAtom } from "@/app/atoms/vehicle";
+import { vehicleAtom } from "@/atoms/vehicle";
 import Divider from "../Divider";
 
 function TrackerTypeDrawer() {

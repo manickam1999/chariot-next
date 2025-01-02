@@ -14,13 +14,13 @@ import AntPath from "./AntPath";
 import {
   DEPARTURE_COORDINATES,
   MAP_COORDINATES,
-} from "@/app/constants/coordinates";
+} from "@/constants/coordinates";
 import { useTheme } from "next-themes";
-import { markerIcon } from "@/app/constants/icons";
-import { vehicleAtom } from "@/app/atoms/vehicle";
+import { markerIcon } from "@/constants/icons";
+import { vehicleAtom } from "@/atoms/vehicle";
 import { useAtom } from "jotai";
-import { useGetProgressInfo } from "@/app/hooks/useGetProgressInfo";
-import { generatePulsatingMarker } from "@/app/utils/helpers";
+import { useGetProgressInfo } from "@/hooks/useGetProgressInfo";
+import { generatePulsatingMarker } from "@/utils/helpers";
 
 interface MapProps {
   posix: LatLngExpression | LatLngTuple;
@@ -33,6 +33,7 @@ const defaults = {
 
 const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
   const { theme } = useTheme();
+  /* eslint-disable @typescript-eslint/no-unused-vars */
   const [polylineCoords, setPolylineCoords] = useState<number[][]>(
     DEPARTURE_COORDINATES,
   );

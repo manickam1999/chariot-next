@@ -1,4 +1,4 @@
-import { TSelectableItem } from "@/app/constants/types";
+import { TSelectableItem } from "@/constants/types";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import React from "react";
 

@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/drawer";
 import React from "react";
 import Selectables from "../shared/Selectables";
-import { TSelectableItem } from "@/app/constants/types";
+import { TSelectableItem } from "@/constants/types";
 import { ChevronDown, ComputerIcon, MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
