@@ -18,7 +18,13 @@ function Developer({
 
     return (
         <div className="flex flex-col gap-y-2 items-center justify-center bg-primary-100 text-primary-850 rounded-lg px-8 py-5 text-center">
-            <Image src={imageSrc} height={100} width={100} alt={name} />
+            <Image
+                src={imageSrc}
+                height={100}
+                width={100}
+                alt={name}
+                draggable="false"
+            />
             <span className="font-bold text-xl">{name}</span>
             <span>{description}</span>
             <div className="flex gap-x-3">
