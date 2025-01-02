@@ -3,21 +3,14 @@
 import { useEffect, useState } from "react";
 import React from "react";
 import { Navigation2 } from "lucide-react";
-import { useGetProgressInfo } from "../hooks/useGetProgressInfo";
-import { useAtom } from "jotai";
-import { vehicleAtom } from "../atoms/vehicle";
 
-function SummaryWindow() {
-  const [tracker] = useAtom(vehicleAtom);
-  const { data } = useGetProgressInfo(tracker);
-
-  const fallback = {
-    progress: 0,
-    roadName: "Loading...",
-  };
-
-  const { progress, roadName } = data || fallback;
-
+function SummaryWindow({
+  progress,
+  roadName,
+}: {
+  progress: number;
+  roadName: string;
+}) {
   const [fillPercentage, setFillPercentage] = useState(0);
 
   useEffect(() => {

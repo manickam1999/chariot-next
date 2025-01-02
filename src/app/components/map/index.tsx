@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { MapContainer, TileLayer } from "react-leaflet";
+import { MapContainer, Marker, TileLayer } from "react-leaflet";
 import { LatLngExpression, LatLngTuple } from "leaflet";
 
 import "leaflet/dist/leaflet.css";
@@ -11,8 +11,16 @@ import Navbar from "../navigation/Navbar";
 import RightNavbar from "../navigation/RightNavbar";
 import SummaryWindow from "../SummaryWindow";
 import AntPath from "./AntPath";
-import { DEPARTURE_COORDINATES } from "@/app/constants/coordinates";
+import {
+  DEPARTURE_COORDINATES,
+  MAP_COORDINATES,
+} from "@/app/constants/coordinates";
 import { useTheme } from "next-themes";
+import { markerIcon } from "@/app/constants/icons";
+import { vehicleAtom } from "@/app/atoms/vehicle";
+import { useAtom } from "jotai";
+import { useGetProgressInfo } from "@/app/hooks/useGetProgressInfo";
+import { generatePulsatingMarker } from "@/app/utils/helpers";
 
 interface MapProps {
   posix: LatLngExpression | LatLngTuple;
@@ -29,9 +37,19 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
     DEPARTURE_COORDINATES,
   );
 
+  const [tracker] = useAtom(vehicleAtom);
+  const { data, vehiclePosition } = useGetProgressInfo(tracker);
+
+  const fallback = {
+    progress: 0,
+    roadName: "Loading...",
+  };
+
+  const { progress, roadName } = data || fallback;
+
   return (
     <div>
-      <SummaryWindow />
+      <SummaryWindow progress={Number(progress)} roadName={roadName} />
       <MapContainer
         center={posix}
         zoom={zoom}
@@ -57,6 +75,18 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
             pulseColor: theme === "dark" ? "#B497CB" : "#684186",
           }}
         />
+
+        {/* Start Pin  */}
+        <Marker position={MAP_COORDINATES.start} icon={markerIcon}></Marker>
+
+        {/* End Pin */}
+        <Marker position={MAP_COORDINATES.end} icon={markerIcon}></Marker>
+
+        {/* Chariot Pulsating Pin */}
+        <Marker
+          position={vehiclePosition}
+          icon={generatePulsatingMarker(tracker)}
+        ></Marker>
         <Navbar />
         <RightNavbar />
       </MapContainer>

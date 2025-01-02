@@ -13,6 +13,8 @@ class LocationService {
 
     return await response.json();
   }
+
+  async getMockLocation() {}
 }
 
 export default new LocationService();
