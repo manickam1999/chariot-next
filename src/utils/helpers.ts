@@ -20,7 +20,9 @@ export const convertDateToReadableDate = (date: Date) => {
     const now = new Date();
     const diff = (now.getTime() - date.getTime()) / 1000;
 
-    if (diff < 60) {
+    if (diff < 1) {
+        return "just now";
+    } else if (diff < 60) {
         const seconds = Math.floor(diff);
         return `${seconds} ${seconds === 1 ? "second" : "seconds"} ago`;
     } else if (diff < 3600) {
