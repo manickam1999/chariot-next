@@ -12,6 +12,7 @@ import RightNavbar from "../navigation/RightNavbar";
 import SummaryWindow from "../SummaryWindow";
 import AntPath from "./AntPath";
 import {
+    CHECKPOINTS,
     DEPARTURE_COORDINATES,
     MAP_COORDINATES,
 } from "@/constants/coordinates";
@@ -23,6 +24,8 @@ import { useGetProgressInfo } from "@/hooks/useGetProgressInfo";
 import { generatePulsatingMarker } from "@/utils/helpers";
 import { roadBlockAtom } from "@/atoms/road-block";
 import Roadblock from "../road-block/Roadblock";
+import CheckpointMarkers from "../markers/Checkpoint";
+import { checkpointAtom } from "@/atoms/checkpoint";
 
 interface MapProps {
     posix: LatLngExpression | LatLngTuple;
@@ -42,6 +45,7 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
 
     const [tracker] = useAtom(vehicleAtom);
     const [roadBlock] = useAtom(roadBlockAtom);
+    const [checkpoint] = useAtom(checkpointAtom);
 
     const { data, vehiclePosition, lastUpdatedAt } =
         useGetProgressInfo(tracker);
@@ -87,6 +91,15 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
                 />
 
                 {roadBlock && <Roadblock></Roadblock>}
+
+                {checkpoint &&
+                    CHECKPOINTS.map((position, index) => (
+                        <CheckpointMarkers
+                            key={index}
+                            position={position}
+                            index={index}
+                        />
+                    ))}
 
                 {/* Start Pin  */}
                 <Marker

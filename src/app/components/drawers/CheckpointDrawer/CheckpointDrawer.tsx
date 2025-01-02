@@ -9,8 +9,13 @@ import { Badge } from "@/components/ui/badge";
 import { Flag } from "lucide-react";
 import Checkpoint from "./Checkpoint";
 import Divider from "../../Divider";
+import { checkpointAtom } from "@/atoms/checkpoint";
+import { useAtom } from "jotai";
+import { Switch } from "@/components/ui/switch";
 
 function CheckpointDrawer() {
+    const [isDisplayedOnMap, setIsDisplayedOnMap] = useAtom(checkpointAtom);
+
     /* TODO: change to actual checkpoints once endpoint is ready. */
     const mockCheckpoints = [
         {
@@ -45,11 +50,31 @@ function CheckpointDrawer() {
             </DrawerTrigger>
             <DrawerContent className="px-3 w-full">
                 <div className="py-5 gap-y-3 flex flex-col w-full overflow-y-auto max-h-[50%]">
-                    <DrawerTitle className="py-3 flex justify-between">
+                    <DrawerTitle className="py-3 flex justify-between items-center">
                         <span className="font-medium opacity-60 dark:opacity-100 text-primary-800 dark:text-dark_inversed-800">
                             Checkpoints
                         </span>
-                        <Badge>Year-Over-Year</Badge>
+                        <div className="flex items-center space-x-2">
+                            <Badge>Year-Over-Year</Badge>
+                            <Switch
+                                checked={isDisplayedOnMap}
+                                onCheckedChange={setIsDisplayedOnMap}
+                                className="
+                relative inline-flex h-5 w-10 shrink-0 cursor-pointer 
+                rounded-full border-2 border-transparent 
+                transition-colors duration-200 ease-in-out
+                data-[state=checked]:bg-primary-500 
+                data-[state=unchecked]:bg-gray-200
+                data-[state=checked]:dark:bg-primary-600
+                data-[state=unchecked]:dark:bg-dark_inversed-800
+            "
+                            />
+                            <label className="text-sm font-medium">
+                                {isDisplayedOnMap
+                                    ? "Hide on Map"
+                                    : "Show on Map"}
+                            </label>
+                        </div>
                     </DrawerTitle>
                     <Divider />
                     <div className="flex flex-col gap-y-4">
