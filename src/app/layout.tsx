@@ -6,6 +6,8 @@ import { Toaster } from "@/components/ui/sonner";
 import { ReactQueryProvider } from "./components/shared/ReactQueryProvider";
 import { AnalyticsProvider } from "./components/shared/AnalyticsProvider";
 import { Suspense } from "react";
+import { AnimatePresence } from "framer-motion";
+import { AnimationProvider } from "./components/shared/AnimationProvider";
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -43,7 +45,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            {children}
+            <AnimationProvider>{children}</AnimationProvider>
           </ThemeProvider>
         </ReactQueryProvider>
         <Toaster />
