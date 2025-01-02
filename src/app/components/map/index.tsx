@@ -38,7 +38,7 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
   );
 
   const [tracker] = useAtom(vehicleAtom);
-  const { data, vehiclePosition } = useGetProgressInfo(tracker);
+  const { data, vehiclePosition, lastUpdatedAt } = useGetProgressInfo(tracker);
 
   const fallback = {
     progress: 0,
@@ -49,7 +49,11 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
 
   return (
     <div>
-      <SummaryWindow progress={Number(progress)} roadName={roadName} />
+      <SummaryWindow
+        progress={Number(progress)}
+        roadName={roadName}
+        lastUpdatedAt={lastUpdatedAt}
+      />
       <MapContainer
         center={posix}
         zoom={zoom}
