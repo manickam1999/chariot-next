@@ -83,7 +83,7 @@ function SummaryWindow({
             <div className="flex justify-center text-center">
                 {/* Current Road Name */}
                 <span className="text-sm dark:text-primary-100/80 text-primary-800/80 font-inter">
-                    Last updated at: {convertDateToReadableDate(lastUpdatedAt)}
+                    Last updated: {convertDateToReadableDate(lastUpdatedAt)}
                 </span>
             </div>
         </div>
