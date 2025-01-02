@@ -18,12 +18,14 @@ export const generatePulsatingMarker = (trackerType: TTrackerType) => {
 
 export const convertDateToReadableDate = (date: Date) => {
     const now = new Date();
-    const diff = (now.getTime() - date.getTime()) / 1000; 
+    const diff = (now.getTime() - date.getTime()) / 1000;
 
     if (diff < 60) {
-        return `${Math.floor(diff)} seconds ago`;
+        const seconds = Math.floor(diff);
+        return `${seconds} ${seconds === 1 ? "second" : "seconds"} ago`;
     } else if (diff < 3600) {
-        return `${Math.floor(diff / 60)} minutes ago`;
+        const minutes = Math.floor(diff / 60);
+        return `${minutes} ${minutes === 1 ? "minute" : "minutes"} ago`;
     } else {
         const options: Intl.DateTimeFormatOptions = {
             weekday: "long",
