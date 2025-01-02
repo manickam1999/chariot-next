@@ -3,13 +3,16 @@
 import { useEffect, useState } from "react";
 import React from "react";
 import { Navigation2 } from "lucide-react";
+import { convertDateToReadableDate } from "../utils/helpers";
 
 function SummaryWindow({
   progress,
   roadName,
+  lastUpdatedAt,
 }: {
   progress: number;
   roadName: string;
+  lastUpdatedAt: Date;
 }) {
   const [fillPercentage, setFillPercentage] = useState(0);
 
@@ -74,6 +77,14 @@ function SummaryWindow({
           className="absolute text-4xl rotate-90 -top-2.5 dark:text-primary-300 text-primary-600 fill-primary-600"
           style={navigationIconStyles}
         />
+      </div>
+
+      {/* Info metadata. */}
+      <div className="flex justify-center">
+        {/* Current Road Name */}
+        <span className="text-sm dark:text-primary-100/80 text-primary-800/80 font-inter">
+          Last updated at: {convertDateToReadableDate(lastUpdatedAt)}
+        </span>
       </div>
     </div>
   );
