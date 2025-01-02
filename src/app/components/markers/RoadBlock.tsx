@@ -1,22 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import { Marker, useMap } from 'react-leaflet';
-import L, { LatLngExpression } from 'leaflet';
+import React, { useEffect, useState } from "react";
+import { Marker, useMap } from "react-leaflet";
+import L, { LatLngExpression } from "leaflet";
 function RoadBlockMarker({ position }: { position: LatLngExpression }) {
-	const [scale, setScale] = useState(1);
-	const map = useMap();
+    const [scale, setScale] = useState(1);
+    const map = useMap();
 
-	useEffect(() => {
-		const handleZoom = () => {
-			const zoomLevel = map.getZoom();
-			const newScale = Math.pow(0.9, 18 - zoomLevel);
-			setScale(newScale);
-		};
+    useEffect(() => {
+        const handleZoom = () => {
+            const zoomLevel = map.getZoom();
+            const newScale = Math.pow(0.9, 18 - zoomLevel);
+            setScale(newScale);
+        };
 
-		map.on('zoom', handleZoom);
-		return () => {
-			map.off('zoom', handleZoom);
-		};
-	}, [map]);
+        map.on("zoom", handleZoom);
+        return () => {
+            map.off("zoom", handleZoom);
+        };
+    }, [map]);
 
     const barrierIconSVG = `
  <?xml version="1.0" encoding="iso-8859-1"?>
@@ -58,7 +58,7 @@ function RoadBlockMarker({ position }: { position: LatLngExpression }) {
 </svg>
 `;
 
-	const iconHTML = `
+    const iconHTML = `
   <div 
     style="
     transform: scale(${scale});
@@ -100,14 +100,14 @@ function RoadBlockMarker({ position }: { position: LatLngExpression }) {
   </div>
 `;
 
-	const icon = L.divIcon({
-		html: iconHTML,
-		className: '',
-		iconAnchor: [22, 45],
-		popupAnchor: [0, -40],
-	});
+    const icon = L.divIcon({
+        html: iconHTML,
+        className: "",
+        iconAnchor: [22, 45],
+        popupAnchor: [0, -40],
+    });
 
-	return <Marker position={position} icon={icon}></Marker>;
+    return <Marker position={position} icon={icon}></Marker>;
 }
 
 export default RoadBlockMarker;
