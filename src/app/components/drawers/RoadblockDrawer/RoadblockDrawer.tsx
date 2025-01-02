@@ -8,7 +8,7 @@ import {
 import { Construction } from "lucide-react";
 import Roadblock from "./Roadblock";
 import Divider from "../../Divider";
-import { Switch } from "@/components/switch";
+import { Switch } from "@/components/ui/switch";
 import { roadBlockAtom } from "@/atoms/road-block";
 import { useAtom } from "jotai";
 
