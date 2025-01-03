@@ -55,7 +55,7 @@ function CheckpointDrawer() {
                             Checkpoints
                         </span>
                         <div className="flex items-center space-x-2">
-                            <Badge>Year-Over-Year</Badge>
+                            {/* <Badge>Year-Over-Year</Badge> */}
                             <Switch
                                 checked={isDisplayedOnMap}
                                 onCheckedChange={setIsDisplayedOnMap}
