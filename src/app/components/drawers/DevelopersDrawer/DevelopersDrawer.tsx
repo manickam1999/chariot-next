@@ -21,7 +21,7 @@ function DevelopersDrawer() {
                 </button>
             </DrawerTrigger>
             <DrawerContent className="px-3 w-full">
-                <div className="flex flex-col py-10">
+                <div className="flex flex-col py-10 overflow-y-auto">
                     <DrawerTitle className="text-center pb-5">
                         The Developers
                     </DrawerTitle>
