@@ -47,8 +47,7 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
     const [roadBlock] = useAtom(roadBlockAtom);
     const [checkpoint] = useAtom(checkpointAtom);
 
-    const { data, vehiclePosition, lastUpdatedAt } =
-        useGetProgressInfo(tracker);
+    const { data, vehiclePosition, lastUpdatedAt } = useGetProgressInfo();
 
     const fallback = {
         progress: 0,

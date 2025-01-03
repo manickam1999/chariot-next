@@ -7,8 +7,11 @@ import {
 } from "../constants/coordinates";
 import { useEffect, useState } from "react";
 import { env } from "@/env";
+import { useAtom } from "jotai";
+import { vehicleAtom } from "@/atoms/vehicle";
 
-export const useGetProgressInfo = (type: TTrackerType) => {
+export const useGetProgressInfo = () => {
+    const [type] = useAtom(vehicleAtom);
     const [vehiclePosition, setVehiclePosition] = useState<{
         lat: number;
         lng: number;
