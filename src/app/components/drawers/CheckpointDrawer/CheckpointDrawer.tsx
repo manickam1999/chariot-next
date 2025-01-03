@@ -49,7 +49,7 @@ function CheckpointDrawer() {
                 </button>
             </DrawerTrigger>
             <DrawerContent className="px-3 w-full">
-                <div className="py-5 gap-y-3 flex flex-col w-full overflow-y-auto max-h-[50%]">
+                <div className="py-5 gap-y-3 flex flex-col w-full max-h-[50%] overflow-auto">
                     <DrawerTitle className="py-3 flex justify-between items-center">
                         <span className="font-medium opacity-60 dark:opacity-100 text-primary-800 dark:text-dark_inversed-800">
                             Checkpoints
@@ -77,7 +77,7 @@ function CheckpointDrawer() {
                         </div>
                     </DrawerTitle>
                     <Divider />
-                    <div className="flex flex-col gap-y-4">
+                    <div className="flex flex-col gap-y-4 overflow-y-auto">
                         {mockCheckpoints.map((checkpoint) => (
                             <Checkpoint
                                 key={checkpoint.streetName}
