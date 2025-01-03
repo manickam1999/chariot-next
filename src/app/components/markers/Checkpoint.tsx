@@ -45,6 +45,18 @@ function CheckpointMarkers({
             "
         >
             ${index + 1}
+    <!-- A small pointer/arrow at the bottom -->
+    <div style="
+      position: absolute;
+      bottom: -10px;
+      left: 50%;           
+      transform: translateX(-50%);
+      width: 0; 
+      height: 0; 
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid #fff;  /* same color as the white border */
+    "></div>
         </div>
     `;
 
