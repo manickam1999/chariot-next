@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import React from "react";
 import { Navigation2 } from "lucide-react";
 import { convertDateToReadableDate } from "../../utils/helpers";
+import RoadblockDrawer from "./drawers/RoadblockDrawer/RoadblockDrawer";
+import CheckpointDrawer from "./drawers/CheckpointDrawer/CheckpointDrawer";
 
 function SummaryWindow({
     progress,
@@ -60,11 +62,14 @@ function SummaryWindow({
                 "absolute bottom-8 md:bottom-12 left-1/2 transform -translate-x-1/2 dark:bg-primary-950 bg-primary-50 bg-opacity-70 dark:bg-opacity-70 h-auto z-50 w-11/12 md:w-1/2 lg:w-1/3 rounded-xl px-8 py-5 space-y-4 my-fade-in-up"
             }
         >
-            <div className="flex items-center justify-center">
+            <div className="relative items-center flex w-full justify-center">
                 {/* Current Road Name */}
-                <span className="text-2xl dark:text-primary-100 text-primary-800 font-inter">
+                <span className="text-xl text-center dark:text-primary-100 text-primary-800 font-inter">
                     {roadName}
                 </span>
+                <div className="flex items-center absolute right-0 justify-center">
+                    <CheckpointDrawer />
+                </div>
             </div>
 
             {/* Progress bar */}
