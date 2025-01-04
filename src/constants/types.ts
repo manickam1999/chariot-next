@@ -42,7 +42,7 @@ export type TCheckpointsResponse = {
     __v: number;
     createdAt: string;
     updatedAt: string;
-    timeDifference: number;
+    timeDifference?: number;
 };
 
 type TCheckpointHistory = {
