@@ -26,4 +26,32 @@ export type TLocationResponse = {
     progress: string;
 };
 
+export type TCheckpointsResponse = {
+    address: {
+        house_number?: string;
+        name?: string;
+        road: string;
+        city: string;
+    };
+    _id: string;
+    checkpointIndex: string;
+    coordinates: Location;
+    visited: boolean;
+    history: TCheckpointHistory[];
+    type: Uppercase<TTrackerType>;
+    __v: number;
+    createdAt: string;
+    updatedAt: string;
+    timeDifference: number;
+};
+
+type TCheckpointHistory = {
+    year: number;
+    utc_time: string;
+    malaysia_time: string;
+    _id: string;
+};
+
 export type TTrackerType = "chariot" | "kavadi";
+
+export type Location = [number, number];

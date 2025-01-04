@@ -1,6 +1,5 @@
 import { LatLngExpression } from "leaflet";
-
-type Location = [number, number];
+import { Location } from "./types";
 
 interface Coordinates {
     center: Location;
