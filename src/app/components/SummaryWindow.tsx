@@ -17,6 +17,7 @@ function SummaryWindow({
     lastUpdatedAt: Date;
 }) {
     const [fillPercentage, setFillPercentage] = useState(0);
+    const [displayText, setDisplayText] = useState<string>("");
 
     useEffect(() => {
         let animationFrameId: number;
@@ -42,6 +43,16 @@ function SummaryWindow({
 
         return () => cancelAnimationFrame(animationFrameId);
     }, [progress]);
+
+    useEffect(() => {
+        setDisplayText(convertDateToReadableDate(lastUpdatedAt));
+
+        const intervalId = setInterval(() => {
+            setDisplayText(convertDateToReadableDate(lastUpdatedAt));
+        }, 5);
+
+        return () => clearInterval(intervalId);
+    }, [lastUpdatedAt]);
 
     const progressBarStyles = {
         width: `${fillPercentage}%`,
@@ -88,7 +99,7 @@ function SummaryWindow({
             <div className="flex justify-center text-center">
                 {/* Current Road Name */}
                 <span className="text-sm dark:text-primary-100/80 text-primary-800/80 font-inter">
-                    Last updated: {convertDateToReadableDate(lastUpdatedAt)}
+                    Last updated: {displayText}
                 </span>
             </div>
         </div>
