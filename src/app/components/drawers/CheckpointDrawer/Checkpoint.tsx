@@ -24,7 +24,7 @@ interface CheckpointProps {
     landmark?: string;
     history: { year: number; malaysia_time: string }[];
     delta: number | null;
-    checkpointIndex: number;
+    checkpointIndex: string;
 }
 
 function Checkpoint({

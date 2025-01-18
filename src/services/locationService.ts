@@ -18,9 +18,9 @@ class LocationService {
 
     async getCheckpointsByType(
         type: TTrackerType
-    ): Promise<TCheckpointsResponse> {
+    ): Promise<[TCheckpointsResponse]> {
         const response = await fetch(
-            `${env.NEXT_PUBLIC_API_URL}/api/checkpoint?type${type.toUpperCase()}`
+            `${env.NEXT_PUBLIC_API_URL}/api/checkpoint?type=${type.toUpperCase()}`
         );
 
         if (!response.ok) {
