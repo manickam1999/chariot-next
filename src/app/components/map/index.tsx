@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { MapContainer, Marker, TileLayer } from "react-leaflet";
 import { LatLngExpression, LatLngTuple } from "leaflet";
 
@@ -26,6 +26,8 @@ import { roadBlockAtom } from "@/atoms/road-block";
 import Roadblock from "../road-block/Roadblock";
 import CheckpointMarkers from "../markers/Checkpoint";
 import { checkpointAtom } from "@/atoms/checkpoint";
+import { findIndex, isEmpty, isEqual } from "lodash";
+import { MapViewUpdater } from "../utils/MapViewUpdater";
 
 interface MapProps {
     posix: LatLngExpression | LatLngTuple;
@@ -38,10 +40,7 @@ const defaults = {
 
 const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
     const { theme } = useTheme();
-    /* eslint-disable @typescript-eslint/no-unused-vars */
-    const [polylineCoords, setPolylineCoords] = useState<number[][]>(
-        DEPARTURE_COORDINATES
-    );
+    const polylineCoordsRef = useRef(DEPARTURE_COORDINATES);
 
     const [tracker] = useAtom(vehicleAtom);
     const [roadBlock] = useAtom(roadBlockAtom);
@@ -55,6 +54,47 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
     };
 
     const { progress, roadName } = data || fallback;
+
+    const [traveledCoords, setTraveledCoords] = useState<number[][]>([]);
+    const [remainingCoords, setRemainingCoords] = useState<number[][]>(
+        polylineCoordsRef.current
+    );
+
+    const { traveled, remaining } = useMemo(() => {
+        if (!vehiclePosition || isEmpty(polylineCoordsRef.current)) {
+            return { traveled: [], remaining: polylineCoordsRef.current };
+        }
+
+        const closestIndex = findIndex(
+            polylineCoordsRef.current,
+            ([lat, lng]) =>
+                lat === vehiclePosition.lat && lng === vehiclePosition.lng
+        );
+
+        return {
+            traveled:
+                closestIndex !== -1
+                    ? polylineCoordsRef.current.slice(0, closestIndex + 1)
+                    : [],
+            remaining:
+                closestIndex !== -1
+                    ? polylineCoordsRef.current.slice(closestIndex)
+                    : polylineCoordsRef.current,
+        };
+    }, [vehiclePosition]);
+
+    useEffect(() => {
+        setTraveledCoords((prev) =>
+            isEqual(prev, traveled) ? prev : traveled
+        );
+        setRemainingCoords((prev) =>
+            isEqual(prev, remaining) ? prev : remaining
+        );
+    }, [traveled, remaining]);
+
+    useEffect(() => {
+        console.log(tracker);
+    }, [tracker]);
 
     return (
         <div>
@@ -71,6 +111,7 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
                 doubleClickZoom={false}
                 className="fixed top-0 bottom-0 left-0 right-0 z-0"
             >
+                <MapViewUpdater vehiclePosition={vehiclePosition} />
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -78,14 +119,34 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
                 />
 
                 <AntPath
-                    positions={polylineCoords}
+                    key={`${tracker}-traveled`}
+                    positions={traveledCoords}
                     options={{
-                        delay: 800,
                         hardwareAccelerated: true,
+                        color: tracker === "kavadi" ? "#3F51B5" : "#9D00FF",
+                        pulseColor:
+                            tracker === "kavadi" ? "#3F51B5" : "#9D00FF",
+                        paused: true,
+                        opacity: 1,
+                        weight: 8,
+                        lineCap: "square",
+                        lineJoin: "mitre",
                     }}
-                    pathOptions={{
-                        color: theme === "dark" ? "#342043" : "#B497CB",
-                        pulseColor: theme === "dark" ? "#B497CB" : "#684186",
+                />
+
+                <AntPath
+                    key={`${tracker}-remaining`}
+                    positions={remainingCoords}
+                    options={{
+                        hardwareAccelerated: true,
+                        color: tracker === "kavadi" ? "#A8B3D4" : "#C1A8D4",
+                        pulseColor:
+                            tracker === "kavadi" ? "#A8B3D4" : "#C1A8D4",
+                        paused: true,
+                        opacity: 1,
+                        weight: 8,
+                        lineCap: "square",
+                        lineJoin: "mitre",
                     }}
                 />
 
