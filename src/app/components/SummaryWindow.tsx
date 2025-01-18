@@ -10,10 +10,12 @@ function SummaryWindow({
     progress,
     roadName,
     lastUpdatedAt,
+    tracker,
 }: {
     progress: number;
     roadName: string;
     lastUpdatedAt: Date;
+    tracker: "kavadi" | "chariot";
 }) {
     const [fillPercentage, setFillPercentage] = useState(0);
     const [displayText, setDisplayText] = useState<string>("");
@@ -83,13 +85,27 @@ function SummaryWindow({
             </div>
 
             {/* Progress bar */}
-            <div className="relative w-full h-1 bg-opacity-50 rounded-full dark:bg-primary-600 bg-primary-300">
+            <div
+                className={`relative w-full h-1 bg-opacity-50 rounded-full ${
+                    tracker === "chariot"
+                        ? "dark:bg-primary-600 bg-primary-300"
+                        : "dark:bg-blue-800 bg-blue-400"
+                }`}
+            >
                 <div
-                    className="absolute top-0 left-0 h-1 rounded-full bg-opacity-80 dark:bg-primary-300 bg-primary-600"
+                    className={`absolute top-0 left-0 h-1 rounded-full bg-opacity-80 ${
+                        tracker === "chariot"
+                            ? "dark:bg-primary-300 bg-primary-600"
+                            : "dark:bg-blue-400 bg-blue-800"
+                    }`}
                     style={progressBarStyles}
                 ></div>
                 <Navigation2
-                    className="absolute text-4xl rotate-90 -top-2.5 dark:text-primary-300 text-primary-600 fill-primary-600"
+                    className={`absolute text-4xl rotate-90 -top-2.5 ${
+                        tracker === "chariot"
+                            ? "dark:text-primary-300 text-primary-600 fill-primary-600"
+                            : "dark:text-blue-400 text-blue-800 fill-blue-800"
+                    }`}
                     style={navigationIconStyles}
                 />
             </div>

@@ -102,6 +102,7 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
                 progress={Number(progress)}
                 roadName={roadName}
                 lastUpdatedAt={lastUpdatedAt}
+                tracker={tracker}
             />
             <MapContainer
                 center={posix}
