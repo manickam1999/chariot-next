@@ -5,7 +5,7 @@ import {
     DrawerTitle,
     DrawerTrigger,
 } from "@/components/ui/drawer";
-import { Construction } from "lucide-react";
+import { Construction, Info } from "lucide-react";
 import Roadblock from "./Roadblock";
 import Divider from "../../Divider";
 import { Switch } from "@/components/ui/switch";
@@ -120,6 +120,16 @@ function RoadblockDrawer() {
                                 duration={type.duration}
                             />
                         ))}
+                    </div>
+                    <div className="pt-4">
+                        <a
+                            href="https://www.mkn.gov.my/web/ms/2023/02/02/kenyataan-media-ketua-polis-pulau-pinang-sempena-perayaan-thaipusam-tahun-2023/"
+                            target="_blank"
+                            className="text-sm text-blue-500 underline flex items-center gap-1"
+                        >
+                            <Info size={14} />
+                            <span>PDRM 2023 Official Statement</span>
+                        </a>
                     </div>
                 </div>
             </DrawerContent>
