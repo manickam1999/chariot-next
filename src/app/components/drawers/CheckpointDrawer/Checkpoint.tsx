@@ -36,9 +36,11 @@ function Checkpoint({
 }: CheckpointProps) {
     const getArrivalTime = (year: number) => {
         const entry = history.find((h) => h.year === year);
-        return entry ? formatDateAndTime(entry.malaysia_time) : "- - : - -";
+        return entry ? formatDateAndTime(entry.malaysia_time) : null;
     };
 
+    const arrival2025 = getArrivalTime(2025);
+    const arrival2024 = getArrivalTime(2024);
     const isDeltaAvailable = delta !== null && delta !== undefined;
 
     return (
@@ -102,17 +104,19 @@ function Checkpoint({
                             2025 Arrival
                         </span>
                         <span className="text-base font-semibold text-primary-800">
-                            {getArrivalTime(2025)}
+                            {arrival2025 || "- - : - -"}
                         </span>
                     </div>
-                    <div className="flex flex-col md:text-right opacity-75">
-                        <span className="text-xs font-medium text-primary-500 uppercase">
-                            2024 Arrival
-                        </span>
-                        <span className="text-base font-semibold text-primary-800">
-                            {getArrivalTime(2024)}
-                        </span>
-                    </div>
+                    {arrival2024 && (
+                        <div className="flex flex-col md:text-right opacity-75">
+                            <span className="text-xs font-medium text-primary-500 uppercase">
+                                2024 Arrival
+                            </span>
+                            <span className="text-base font-semibold text-primary-800">
+                                {arrival2024}
+                            </span>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
