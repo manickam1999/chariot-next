@@ -21,7 +21,7 @@ export const useGetProgressInfo = () => {
     const isMock = env.NEXT_PUBLIC_USE_MOCK_DATA;
     const [mockData, setMockData] = useState<TLocationResponse | null>(null);
 
-    const { data, isFetching, isError } = useQuery({
+    const { data, isFetching, isError, dataUpdatedAt } = useQuery({
         queryKey: ["getProgressInfo", type],
         queryFn: async ({ queryKey: [, type] }) => {
             if (isMock) return null;
@@ -30,19 +30,23 @@ export const useGetProgressInfo = () => {
                 type as TTrackerType
             );
 
-            /* Updating time after fetching data. */
-            if (location) {
-                setLastUpdatedAt(new Date());
-                setVehiclePosition({
-                    lat: location.latitude,
-                    lng: location.longitude,
-                });
-            }
-
             return location;
         },
         refetchInterval: 1000 * 30,
     });
+
+    useEffect(() => {
+        if (data) {
+            setVehiclePosition({
+                lat: data.latitude,
+                lng: data.longitude,
+            });
+        }
+    }, [data]);
+
+    useEffect(() => {
+        setLastUpdatedAt(new Date(dataUpdatedAt));
+    }, [dataUpdatedAt]);
 
     useEffect(() => {
         if (isMock) {

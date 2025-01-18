@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import React from "react";
 import { Navigation2 } from "lucide-react";
 import { convertDateToReadableDate } from "../../utils/helpers";
-import RoadblockDrawer from "./drawers/RoadblockDrawer/RoadblockDrawer";
 import CheckpointDrawer from "./drawers/CheckpointDrawer/CheckpointDrawer";
 
 function SummaryWindow({
@@ -49,7 +48,7 @@ function SummaryWindow({
 
         const intervalId = setInterval(() => {
             setDisplayText(convertDateToReadableDate(lastUpdatedAt));
-        }, 5);
+        }, 1000);
 
         return () => clearInterval(intervalId);
     }, [lastUpdatedAt]);
