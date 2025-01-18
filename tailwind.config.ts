@@ -10,24 +10,7 @@ const config: Config = {
     ],
     theme: {
         extend: {
-            keyframes: {
-                pulseShadow: {
-                    "0%": {
-                        boxShadow: "0 0 0 0 rgba(0, 0, 0, 0.4)",
-                    },
-                    "70%": {
-                        boxShadow: "0 0 0 20px rgba(0, 0, 0, 0)",
-                    },
-                    "100%": {
-                        boxShadow: "0 0 0 0 rgba(0, 0, 0, 0)",
-                    },
-                },
-            },
-            animation: {
-                pulseShadow: "pulseShadow 0.75s infinite",
-            },
             colors: {
-                pulsePurple: "#9D00FF",
                 primary: {
                     "0": "#FFFFFF",
                     "50": "#F3EEF6",
