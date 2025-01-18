@@ -386,7 +386,7 @@ function CheckpointDrawer() {
             <DrawerContent className="px-3 w-full">
                 <div className="py-5 gap-y-3 flex flex-col w-full max-h-[50%] overflow-auto">
                     <DrawerTitle className="py-3 flex justify-between items-center">
-                        <span className="font-medium opacity-60 dark:opacity-100 text-primary-800 dark:text-dark_inversed-800">
+                        <span className="font-semibold opacity-80 text-primary-800 dark:text-dark_inversed-800">
                             Checkpoints
                         </span>
                         <div className="flex items-center space-x-2">
@@ -410,6 +410,7 @@ function CheckpointDrawer() {
                                 landmark={checkpoint.address.name || ""}
                                 history={checkpoint.history}
                                 delta={checkpoint.timeDifference ?? null}
+                                checkpointIndex={checkpoint.checkpointIndex}
                             />
                         ))}
                     </div>
