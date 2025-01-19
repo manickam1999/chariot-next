@@ -12,6 +12,8 @@ import { Button } from "@/components/ui/button";
 import { useAtom } from "jotai";
 import { vehicleAtom } from "@/atoms/vehicle";
 import Divider from "../Divider";
+import ChariotIcon from "../icons/Chariot";
+import KavadiIcon from "../icons/Kavadi";
 
 function TrackerTypeDrawer() {
     const [tracker, setTracker] = useAtom(vehicleAtom);
@@ -25,25 +27,13 @@ function TrackerTypeDrawer() {
             title: "chariot",
             description:
                 "Track the silver chariot carrying the statue of Lord Murugan.",
-            logo: (
-                <TractorIcon
-                    size={30}
-                    className="stroke-primary-850 dark:stroke-dark_inversed-850"
-                    strokeWidth={1}
-                />
-            ),
+            logo: <ChariotIcon size={60} colour={"#412954"} />,
         },
         {
             title: "kavadi",
             description:
                 "Track the devotees carrying their kavadi to witness their kavadi aatam.",
-            logo: (
-                <OrigamiIcon
-                    size={30}
-                    strokeWidth={1}
-                    className="stroke-primary-850 dark:stroke-dark_inversed-850"
-                />
-            ),
+            logo: <KavadiIcon size={60} colour={"#412954"} />,
         },
     ];
 
