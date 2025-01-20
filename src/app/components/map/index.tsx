@@ -203,7 +203,7 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
                 {/* Chariot Pulsating Pin */}
                 <Marker
                     position={vehiclePosition}
-                    icon={generatePulsatingMarker(tracker)}
+                    icon={generatePulsatingMarker(tracker, theme)}
                 ></Marker>
                 <Navbar />
                 <RightNavbar />

@@ -87,24 +87,24 @@ function SummaryWindow({
             {/* Progress bar */}
             <div
                 className={`relative w-full h-1 bg-opacity-50 rounded-full ${
-                    tracker === "chariot"
-                        ? "dark:bg-primary-600 bg-primary-300"
-                        : "dark:bg-blue-800 bg-blue-400"
+                    tracker === "kavadi"
+                        ? "dark:bg-[#4A5680] bg-[#A8B3D4]"
+                        : "dark:bg-[#8A6B99] bg-[#C1A8D4]"
                 }`}
             >
                 <div
                     className={`absolute top-0 left-0 h-1 rounded-full bg-opacity-80 ${
-                        tracker === "chariot"
-                            ? "dark:bg-primary-300 bg-primary-600"
-                            : "dark:bg-blue-400 bg-blue-800"
+                        tracker === "kavadi"
+                            ? "dark:bg-[#6B7FE3] bg-[#3F51B5]"
+                            : "dark:bg-[#BE4DFF] bg-[#9D00FF]"
                     }`}
                     style={progressBarStyles}
                 ></div>
                 <Navigation2
                     className={`absolute text-4xl rotate-90 -top-2.5 ${
-                        tracker === "chariot"
-                            ? "dark:text-primary-300 text-primary-600 fill-primary-600"
-                            : "dark:text-blue-400 text-blue-800 fill-blue-800"
+                        tracker === "kavadi"
+                            ? "dark:text-[#6B7FE3] text-[#3F51B5] fill-[#3F51B5] dark:fill-[#6B7FE3]"
+                            : "dark:text-[#BE4DFF] text-[#9D00FF] fill-[#9D00FF] dark:fill-[#BE4DFF]"
                     }`}
                     style={navigationIconStyles}
                 />

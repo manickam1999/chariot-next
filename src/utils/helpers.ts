@@ -1,8 +1,18 @@
 import L from "leaflet";
 import { TTrackerType } from "../constants/types";
 
-export const generatePulsatingMarker = (trackerType: TTrackerType) => {
-    const color = trackerType === "chariot" ? "#9D00FF" : "blue";
+export const generatePulsatingMarker = (
+    trackerType: TTrackerType,
+    theme?: string
+) => {
+    const color =
+        trackerType === "kavadi"
+            ? theme === "dark"
+                ? "#6B7FE3"
+                : "#3F51B5"
+            : theme === "dark"
+              ? "#BE4DFF"
+              : "#9D00FF";
     const cssStyle = `
         width: 16px;
         height: 16px;
