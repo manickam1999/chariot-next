@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./components/shared/ThemeProvider";
 import { Toaster } from "@/components/ui/sonner";
 import { ReactQueryProvider } from "./components/shared/ReactQueryProvider";
 import { AnalyticsProvider } from "./components/shared/AnalyticsProvider";
 import { Suspense } from "react";
+
+const playfairDisplay = Playfair_Display({
+    subsets: ["latin"],
+    variable: "--font-playfair",
+});
 
 const geistSans = localFont({
     src: "../fonts/GeistVF.woff",
@@ -31,7 +37,7 @@ export default function RootLayout({
     return (
         <html lang="en" suppressHydrationWarning>
             <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+                className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} antialiased`}
             >
                 <Suspense>
                     <AnalyticsProvider />

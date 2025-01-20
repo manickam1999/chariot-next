@@ -10,6 +10,9 @@ const config: Config = {
     ],
     theme: {
         extend: {
+            fontFamily: {
+                playfair: ["var(--font-playfair)"],
+            },
             colors: {
                 primary: {
                     "0": "#FFFFFF",
@@ -80,6 +83,7 @@ const config: Config = {
             },
         },
     },
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
     plugins: [require("tailwindcss-animate")],
 };
 export default config;
