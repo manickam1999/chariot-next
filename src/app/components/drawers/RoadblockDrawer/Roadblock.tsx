@@ -20,7 +20,7 @@ const Roadblock = ({
     const Icon = type === "closure" ? RoadblockIcon : PoliceIcon;
 
     return (
-        <div className="flex flex-col rounded-xl bg-white p-5 shadow">
+        <div className="flex flex-col rounded-xl bg-white p-5 shadow dark:bg-primary-800">
             {/* Header */}
             <div className="flex flex-row justify-between items-center">
                 {/* Left section: Icon and Street Name */}
@@ -29,10 +29,10 @@ const Roadblock = ({
 
                     {/* Street Name and Time */}
                     <div className="flex flex-col gap-1">
-                        <div className="text-lg font-semibold text-primary-900">
+                        <div className="text-lg font-semibold text-primary-900 dark:text-primary-50">
                             {streetName}
                         </div>
-                        <div className="flex items-center gap-x-2 text-sm text-primary-600">
+                        <div className="flex items-center gap-x-2 text-sm text-primary-600 dark:text-primary-100">
                             <Clock size={15} opacity={0.7} />
                             <span>{duration}</span>
                         </div>
