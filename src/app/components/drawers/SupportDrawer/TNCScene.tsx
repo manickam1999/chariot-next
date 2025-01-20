@@ -88,7 +88,7 @@ function TNCScene({
                 disabled={!isAccepted}
                 onClick={() => handleSceneChange(1)}
                 variant="outline"
-                className="flex justify-center gap-x-2 items-center bg-primary-600 text-primary-150"
+                className="flex justify-center gap-x-2 items-center bg-primary-600 text-primary-150 dark:bg-primary-50 dark:text-primary-800"
             >
                 <HeartIcon strokeWidth={1} />
                 <span>Support now!</span>
