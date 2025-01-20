@@ -132,9 +132,9 @@ export default function SplashScreen({
             className="fixed top-0 left-0 w-full h-full bg-primary-50 flex items-center justify-center"
         >
             <motion.div
-                className="relative text-primary-800 text-xl md:text-6xl font-extralight font-playfair text-center"
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 0.5 }}
+                className="relative text-primary-800 text-xl md:text-2xl lg:text-4x font-extralight font-playfair text-center"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
             >
                 <TextScrambleComponent
