@@ -1,7 +1,12 @@
+"use client";
+
 import dynamic from "next/dynamic";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
+import SplashScreen from "@/app/components/SplashScreen";
 
 export default function Page() {
+    const [showMap, setShowMap] = useState(false);
+
     const Map = useMemo(
         () =>
             dynamic(() => import("@/app/components/map/"), {
@@ -12,7 +17,8 @@ export default function Page() {
 
     return (
         <>
-            <Map posix={[5.41613, 100.33944]} />
+            {!showMap && <SplashScreen onComplete={() => setShowMap(true)} />}
+            {showMap && <Map posix={[5.41613, 100.33944]} />}
         </>
     );
 }
