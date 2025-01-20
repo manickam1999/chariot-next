@@ -45,7 +45,7 @@ function TrackerTypeDrawer() {
         <Drawer>
             <DrawerTrigger asChild>
                 <Button>
-                    <div>
+                    <div className="[&__svg]:!size-5">
                         {
                             selectableItems.find(
                                 (item) => item.title === tracker
