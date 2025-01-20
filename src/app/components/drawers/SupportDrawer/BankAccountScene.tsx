@@ -19,7 +19,7 @@ function BankAccountScene() {
     return (
         <div className="flex flex-col gap-y-2 items-center justify-center">
             <div className="flex flex-col items-center gap-y-2">
-                <span className="font-bold text-primary-850 dark:text-dark_inversed-850">
+                <span className="font-bold text-primary-850 dark:text-primary-100">
                     Malaysian National QR
                 </span>
                 <div className="relative p-2 bg-white rounded-lg shadow-lg">
@@ -47,7 +47,7 @@ function BankAccountScene() {
             </div>
             <Divider />
             <div className="flex flex-col items-center gap-y-2 w-full">
-                <span className="font-bold text-primary-850 dark:text-dark_inversed-850">
+                <span className="font-bold text-primary-850 dark:text-primary-50">
                     Bank Transfer Details
                 </span>
                 <div className="flex flex-col gap-y-3 rounded-lg bg-primary-100 p-3 w-full md:w-fit md:items-center">

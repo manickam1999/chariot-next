@@ -54,7 +54,7 @@ function TrackerTypeDrawer() {
             </DrawerTrigger>
             <DrawerContent className="px-3 w-full">
                 <div className="py-5 gap-y-3 flex flex-col w-full">
-                    <DrawerTitle className="font-control opacity-60 dark:opacity-100 py-3">
+                    <DrawerTitle className="font-control opacity-70 dark:opacity-90 py-3">
                         Choose Tracker
                     </DrawerTitle>
                     <Divider />
