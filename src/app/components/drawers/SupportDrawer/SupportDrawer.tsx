@@ -26,7 +26,7 @@ function SupportDrawer() {
             </DrawerTrigger>
             <DrawerContent className="px-3 w-full">
                 <div className="py-5 flex flex-col w-full gap-y-3">
-                    <div className="flex flex-col items-center">
+                    <div className="flex flex-col items-center space-y-2">
                         <span className="font-medium text-primary-850 text-2xl dark:text-dark_inversed-850">
                             Support The Development
                         </span>

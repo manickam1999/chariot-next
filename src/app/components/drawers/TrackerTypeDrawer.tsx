@@ -7,7 +7,7 @@ import {
 import React from "react";
 import Selectables from "../shared/Selectables";
 import { TSelectableItem, TTrackerType } from "@/constants/types";
-import { ChevronDown, OrigamiIcon, TractorIcon } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAtom } from "jotai";
 import { vehicleAtom } from "@/atoms/vehicle";
@@ -54,7 +54,7 @@ function TrackerTypeDrawer() {
             </DrawerTrigger>
             <DrawerContent className="px-3 w-full">
                 <div className="py-5 gap-y-3 flex flex-col w-full">
-                    <DrawerTitle className="font-medium opacity-60 dark:opacity-100 py-3">
+                    <DrawerTitle className="font-control opacity-60 dark:opacity-100 py-3">
                         Choose Tracker
                     </DrawerTitle>
                     <Divider />
