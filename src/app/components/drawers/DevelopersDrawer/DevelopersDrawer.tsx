@@ -5,7 +5,7 @@ import {
     DrawerTrigger,
 } from "@/components/ui/drawer";
 import React from "react";
-import { PersonStandingIcon } from "lucide-react";
+import { UserIcon } from "lucide-react";
 import { DEVELOPERS } from "@/constants/developers";
 import Developer from "./Developer";
 
@@ -14,7 +14,7 @@ function DevelopersDrawer() {
         <Drawer>
             <DrawerTrigger asChild>
                 <button>
-                    <PersonStandingIcon
+                    <UserIcon
                         size={18}
                         className="stroke-primary-850 dark:stroke-dark_inversed-850"
                     />

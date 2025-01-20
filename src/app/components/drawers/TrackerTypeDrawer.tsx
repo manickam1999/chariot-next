@@ -32,7 +32,7 @@ function TrackerTypeDrawer() {
         {
             title: "kavadi",
             description:
-                "Track the devotees carrying their kavadi to witness their kavadi aatam.",
+                "Track the devotees carrying their kavadi to witness their kavadi aatam ahead of the silver chariot.",
             logo: <KavadiIcon size={60} colour={"#412954"} />,
         },
     ];
