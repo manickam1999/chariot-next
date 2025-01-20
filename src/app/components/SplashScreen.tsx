@@ -9,7 +9,7 @@ export default function SplashScreen({
     onComplete: () => void;
 }) {
     useEffect(() => {
-        const timeout = setTimeout(onComplete, 4000); // Adjust duration as needed
+        const timeout = setTimeout(onComplete, 2700); // Adjust duration as needed
         return () => clearTimeout(timeout);
     }, [onComplete]);
 
@@ -19,7 +19,7 @@ export default function SplashScreen({
         <motion.div
             initial={{ y: 0 }}
             animate={{ y: "-100vh" }}
-            transition={{ delay: 3, duration: 1, ease: "easeInOut" }}
+            transition={{ delay: 2, duration: 0.8, ease: "easeInOut" }}
             className="fixed top-0 left-0 w-full h-full bg-black flex items-center justify-center"
         >
             <motion.div className="relative text-white text-3xl md:text-5xl font-bold text-center">
