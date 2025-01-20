@@ -24,7 +24,7 @@ function ThemeDrawer() {
                 <MoonIcon
                     strokeWidth={1}
                     size={30}
-                    className="stroke-primary-850 dark:stroke-dark_inversed-850"
+                    className="stroke-primary-850 dark:stroke-primary-150"
                 />
             ),
         },
@@ -36,7 +36,7 @@ function ThemeDrawer() {
                 <SunIcon
                     size={30}
                     strokeWidth={1}
-                    className="stroke-primary-850 dark:stroke-dark_inversed-850"
+                    className="stroke-primary-850 dark:stroke-primary-150"
                 />
             ),
         },
@@ -48,7 +48,7 @@ function ThemeDrawer() {
                 <ComputerIcon
                     size={30}
                     strokeWidth={1}
-                    className="stroke-primary-850 dark:stroke-dark_inversed-850"
+                    className="stroke-primary-850 dark:stroke-primary-150"
                 />
             ),
         },
@@ -70,7 +70,7 @@ function ThemeDrawer() {
             </DrawerTrigger>
             <DrawerContent className="px-3 w-full">
                 <div className="py-5 gap-y-3 flex flex-col w-full">
-                    <DrawerTitle className="font-medium opacity-60 dark:opacity-100 py-3">
+                    <DrawerTitle className="font-control opacity-70 dark:opacity-90 py-3">
                         Choose Map Mode
                     </DrawerTitle>
                     <Divider />

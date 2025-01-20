@@ -5,7 +5,7 @@ import {
     DrawerTitle,
     DrawerTrigger,
 } from "@/components/ui/drawer";
-import { Construction, Info } from "lucide-react";
+import { TrafficConeIcon, Info, } from "lucide-react";
 import Roadblock from "./Roadblock";
 import Divider from "../../Divider";
 import { Switch } from "@/components/ui/switch";
@@ -77,16 +77,16 @@ function RoadblockDrawer() {
         <Drawer>
             <DrawerTrigger asChild>
                 <button>
-                    <Construction
+                    <TrafficConeIcon
                         size={18}
-                        className="stroke-primary-850 dark:stroke-dark_inversed-850"
+                        className="stroke-primary-850 dark:stroke-primary-150"
                     />
                 </button>
             </DrawerTrigger>
             <DrawerContent className="px-3 w-full">
                 <div className="py-5 gap-y-3 flex flex-col w-full overflow-y-auto max-h-[50%]">
                     <DrawerTitle className="py-3 flex justify-between items-center">
-                        <span className="font-control opacity-60">
+                        <span className="font-control opacity-70 dark:opacity-90">
                             Roadblocks
                         </span>
                         <div className="flex items-center space-x-2">
@@ -100,7 +100,7 @@ function RoadblockDrawer() {
                   data-[state=checked]:bg-primary-500 
                   data-[state=unchecked]:bg-gray-200
                   data-[state=checked]:dark:bg-primary-600
-                  data-[state=unchecked]:dark:bg-dark_inversed-800
+                  data-[state=unchecked]:dark:bg-primary-150
                 "
                             />
                             <label className="text-sm font-control">

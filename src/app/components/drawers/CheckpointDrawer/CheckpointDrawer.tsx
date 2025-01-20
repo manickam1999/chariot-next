@@ -24,14 +24,14 @@ function CheckpointDrawer() {
                 <button>
                     <Flag
                         size={18}
-                        className="stroke-primary-850 dark:stroke-dark_inversed-850"
+                        className="stroke-primary-850 dark:stroke-primary-150"
                     />
                 </button>
             </DrawerTrigger>
             <DrawerContent className="px-3 w-full">
                 <div className="py-5 gap-y-3 flex flex-col w-full max-h-[50%] overflow-auto">
                     <DrawerTitle className="py-3 flex justify-between items-center">
-                        <span className="font-semibold opacity-80 text-primary-800 dark:text-dark_inversed-800">
+                        <span className="font-semibold opacity-80 text-primary-800 dark:text-primary-150">
                             Checkpoints
                         </span>
                         <div className="flex items-center space-x-2">

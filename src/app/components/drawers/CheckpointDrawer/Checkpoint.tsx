@@ -1,6 +1,7 @@
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { ArrowDown, ArrowUp, Clock } from "lucide-react";
+import Divider from "../../Divider";
 
 function formatDateAndTime(timestamp: string) {
     if (!timestamp || timestamp === "- - :- -") return "- - :- -";
@@ -44,7 +45,7 @@ function Checkpoint({
     const isDeltaAvailable = delta !== null && delta !== undefined;
 
     return (
-        <div className="flex flex-col rounded-xl bg-white p-5 shadow">
+        <div className="flex flex-col rounded-xl bg-white p-5 shadow dark:bg-primary-800">
             {/* Header */}
             <div className="flex flex-row justify-between items-center">
                 {/* Left section: Index and Checkpoint Name */}
@@ -56,12 +57,12 @@ function Checkpoint({
 
                     {/* Checkpoint Name */}
                     <div className="flex flex-col gap-1">
-                        <div className="flex items-center text-lg font-semibold text-primary-900">
+                        <div className="flex items-center text-lg font-semibold text-primary-900 dark:text-primary-50">
                             <span>{landmark || address}</span>
                         </div>
 
                         {landmark && (
-                            <div className="text-sm text-primary-600 leading-tight">
+                            <div className="text-sm text-primary-600 leading-tight dark:text-primary-100">
                                 {address}
                             </div>
                         )}
@@ -96,23 +97,27 @@ function Checkpoint({
                 )}
             </div>
 
+            <div className="mt-2">
+                <Divider />
+            </div>
+
             {/* Body */}
-            <div className="mt-4 border-t pt-4 pl-12">
+            <div className="pt-2 pl-12">
                 <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-3">
                     <div className="flex flex-col">
-                        <span className="text-xs font-medium text-primary-500 uppercase">
+                        <span className="text-xs font-medium text-primary-500 uppercase dark:text-primary-100">
                             2025 Arrival
                         </span>
-                        <span className="text-base font-semibold text-primary-800">
+                        <span className="text-base font-semibold text-primary-800 dark:text-primary-100">
                             {arrival2025 || "- - : - -"}
                         </span>
                     </div>
                     {arrival2024 && (
                         <div className="flex flex-col md:text-right opacity-75">
-                            <span className="text-xs font-medium text-primary-500 uppercase">
+                            <span className="text-xs font-medium text-primary-500 uppercase dark:text-primary-100">
                                 2024 Arrival
                             </span>
-                            <span className="text-base font-semibold text-primary-800">
+                            <span className="text-base font-semibold text-primary-800 dark:text-primary-100">
                                 {arrival2024}
                             </span>
                         </div>

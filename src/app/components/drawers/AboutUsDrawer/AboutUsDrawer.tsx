@@ -15,7 +15,7 @@ function AboutUsDrawer() {
                 <button>
                     <Info
                         size={18}
-                        className="stroke-primary-850 dark:stroke-dark_inversed-850"
+                        className="stroke-primary-850 dark:stroke-primary-150"
                     />
                 </button>
             </DrawerTrigger>

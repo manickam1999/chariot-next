@@ -7,11 +7,13 @@ import {
 import React from "react";
 import Selectables from "../shared/Selectables";
 import { TSelectableItem, TTrackerType } from "@/constants/types";
-import { ChevronDown, OrigamiIcon, TractorIcon } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAtom } from "jotai";
 import { vehicleAtom } from "@/atoms/vehicle";
 import Divider from "../Divider";
+import ChariotIcon from "../icons/Chariot";
+import KavadiIcon from "../icons/Kavadi";
 
 function TrackerTypeDrawer() {
     const [tracker, setTracker] = useAtom(vehicleAtom);
@@ -26,23 +28,15 @@ function TrackerTypeDrawer() {
             description:
                 "Track the silver chariot carrying the statue of Lord Murugan.",
             logo: (
-                <TractorIcon
-                    size={30}
-                    className="stroke-primary-850 dark:stroke-dark_inversed-850"
-                    strokeWidth={1}
-                />
+                <ChariotIcon className="fill-primary-800 dark:fill-primary-250 w-16 h-16" />
             ),
         },
         {
             title: "kavadi",
             description:
-                "Track the devotees carrying their kavadi to witness their kavadi aatam.",
+                "Track the devotees carrying their kavadi to witness their kavadi aatam ahead of the silver chariot.",
             logo: (
-                <OrigamiIcon
-                    size={30}
-                    strokeWidth={1}
-                    className="stroke-primary-850 dark:stroke-dark_inversed-850"
-                />
+                <KavadiIcon className="fill-primary-800 dark:fill-primary-250 w-16 h-16" />
             ),
         },
     ];
@@ -51,7 +45,7 @@ function TrackerTypeDrawer() {
         <Drawer>
             <DrawerTrigger asChild>
                 <Button>
-                    <div>
+                    <div className="[&__svg]:!size-5">
                         {
                             selectableItems.find(
                                 (item) => item.title === tracker
@@ -64,7 +58,7 @@ function TrackerTypeDrawer() {
             </DrawerTrigger>
             <DrawerContent className="px-3 w-full">
                 <div className="py-5 gap-y-3 flex flex-col w-full">
-                    <DrawerTitle className="font-medium opacity-60 dark:opacity-100 py-3">
+                    <DrawerTitle className="font-control opacity-70 dark:opacity-90 py-3">
                         Choose Tracker
                     </DrawerTitle>
                     <Divider />

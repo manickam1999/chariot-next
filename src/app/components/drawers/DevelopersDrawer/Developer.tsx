@@ -24,6 +24,7 @@ function Developer({
                 width={100}
                 alt={name}
                 draggable="false"
+                className="rounded-full"
             />
             <span className="font-bold text-xl">{name}</span>
             <span>{description}</span>

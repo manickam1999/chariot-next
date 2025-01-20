@@ -19,18 +19,18 @@ function SupportDrawer() {
                     <HeartIcon
                         size={30}
                         strokeWidth={1}
-                        className="stroke-primary-850 dark:stroke-dark_inversed-850"
+                        className="stroke-primary-850 dark:stroke-primary-50"
                     />
                     <span className="capitalize">Support Us</span>
                 </Button>
             </DrawerTrigger>
             <DrawerContent className="px-3 w-full">
                 <div className="py-5 flex flex-col w-full gap-y-3">
-                    <div className="flex flex-col items-center">
-                        <span className="font-medium text-primary-850 text-2xl dark:text-dark_inversed-850">
+                    <div className="flex flex-col items-center space-y-2">
+                        <span className="font-medium text-primary-850 text-2xl dark:text-primary-50">
                             Support The Development
                         </span>
-                        <span className="italic text-md dark:text-dark_inversed-900">
+                        <span className="italic text-md dark:text-primary-100">
                             {scene === 0
                                 ? "Your donation makes a difference"
                                 : "Thank you for your support!"}

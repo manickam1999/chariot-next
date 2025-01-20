@@ -2,16 +2,16 @@ export const DEVELOPERS = [
     {
         name: "Manickam Murugappan",
         description:
-            "I pointed a gun at @zihangg's head to force him to do this.",
+            "Agent on the ground. I make sure the data is accurate and up-to-date.",
         linkedIn: "https://www.linkedin.com/in/moneycome",
         github: "https://www.github.com/manickam1999",
         email: "manickam1999@gmail.com",
-        imageSrc: "/assets/mani.png",
+        imageSrc: "/assets/mani.jpeg",
     },
     {
         name: "Lee Zi Hang",
         description:
-            "I was forced to develop this, gun to my head, by @manickam.",
+            "The handler in the shadows. I make sure everything runs smoothly.",
         linkedIn: "https://www.linkedin.com/in/zihangg",
         github: "https://www.github.com/zihangg",
         email: "kevu.lee@gmail.com",
