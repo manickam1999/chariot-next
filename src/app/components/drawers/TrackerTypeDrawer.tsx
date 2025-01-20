@@ -27,13 +27,17 @@ function TrackerTypeDrawer() {
             title: "chariot",
             description:
                 "Track the silver chariot carrying the statue of Lord Murugan.",
-            logo: <ChariotIcon size={60} colour={"#412954"} />,
+            logo: (
+                <ChariotIcon className="fill-primary-800 dark:fill-primary-250 w-16 h-16" />
+            ),
         },
         {
             title: "kavadi",
             description:
                 "Track the devotees carrying their kavadi to witness their kavadi aatam ahead of the silver chariot.",
-            logo: <KavadiIcon size={60} colour={"#412954"} />,
+            logo: (
+                <KavadiIcon className="fill-primary-800 dark:fill-primary-250 w-16 h-16" />
+            ),
         },
     ];
 
