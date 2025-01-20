@@ -124,9 +124,22 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
                     positions={traveledCoords}
                     options={{
                         hardwareAccelerated: true,
-                        color: tracker === "kavadi" ? "#3F51B5" : "#9D00FF",
+                        color:
+                            tracker === "kavadi"
+                                ? theme === "dark"
+                                    ? "#6B7FE3"
+                                    : "#3F51B5"
+                                : theme === "dark"
+                                  ? "#BE4DFF"
+                                  : "#9D00FF",
                         pulseColor:
-                            tracker === "kavadi" ? "#3F51B5" : "#9D00FF",
+                            tracker === "kavadi"
+                                ? theme === "dark"
+                                    ? "#6B7FE3"
+                                    : "#3F51B5"
+                                : theme === "dark"
+                                  ? "#BE4DFF"
+                                  : "#9D00FF",
                         paused: true,
                         opacity: 1,
                         weight: 8,
@@ -140,9 +153,22 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
                     positions={remainingCoords}
                     options={{
                         hardwareAccelerated: true,
-                        color: tracker === "kavadi" ? "#A8B3D4" : "#C1A8D4",
+                        color:
+                            tracker === "kavadi"
+                                ? theme === "dark"
+                                    ? "#4A5680"
+                                    : "#A8B3D4"
+                                : theme === "dark"
+                                  ? "#8A6B99"
+                                  : "#C1A8D4",
                         pulseColor:
-                            tracker === "kavadi" ? "#A8B3D4" : "#C1A8D4",
+                            tracker === "kavadi"
+                                ? theme === "dark"
+                                    ? "#4A5680"
+                                    : "#A8B3D4"
+                                : theme === "dark"
+                                  ? "#8A6B99"
+                                  : "#C1A8D4",
                         paused: true,
                         opacity: 1,
                         weight: 8,
